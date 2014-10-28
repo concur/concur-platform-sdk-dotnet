@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>ConcurPlatform</id>
+    <version>0.1.0</version>
+    <title>Concur Platform</title>
+    <authors>Concur Technologies</authors>
+    <owners></owners>
+    <licenseUrl>https://raw.githubusercontent.com/concur/concur-platform-sdk-dotnet/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/concur/concur-platform-sdk-dotnet</projectUrl>
+    <iconUrl>https://avatars1.githubusercontent.com/u/8116406?v=2&amp;s=200</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Client library for accessing Concur Web services</description>
+    <releaseNotes></releaseNotes>
+    <copyright>&#169; Copyright 2014 Concur Technologies, Inc. All rights reserved.</copyright>
+    <tags>concur platform sdk API REST connect xamarin portable</tags>
+  </metadata>
+</package>
