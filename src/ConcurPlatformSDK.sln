@@ -5,8 +5,6 @@ VisualStudioVersion = 12.0.30723.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConcurPlatformServices", "ConcurPlatformServices\ConcurPlatformServices.csproj", "{A14BBCE5-7251-4266-895B-7297F8148153}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConcurPlatformSDKDemoiOS", "ConcurPlatformSDKDemoiOS\ConcurPlatformSDKDemoiOS.csproj", "{5B03F7C4-257D-467A-BFE8-97085E2744E0}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Ad-Hoc|Any CPU = Ad-Hoc|Any CPU
