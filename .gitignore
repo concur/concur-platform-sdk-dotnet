@@ -99,6 +99,7 @@ _TeamCity*
 _NCrunch_*
 .*crunch*.local.xml
 
+
 # MightyMoose
 *.mm.*
 AutoTest.Net/
@@ -181,3 +182,8 @@ UpgradeLog*.htm
 
 # Microsoft Fakes
 FakesAssemblies/
+
+# Mac files
+.DS_Store
+.com.apple.timemachine.supported
+

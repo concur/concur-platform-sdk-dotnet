@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
+# Visual Studio 2012
 VisualStudioVersion = 12.0.30723.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConcurPlatformServices", "ConcurPlatformServices\ConcurPlatformServices.csproj", "{A14BBCE5-7251-4266-895B-7297F8148153}"
@@ -25,6 +25,38 @@ Global
 		Release|Mixed Platforms = Release|Mixed Platforms
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5B03F7C4-257D-467A-BFE8-97085E2744E0}.Ad-Hoc|Any CPU.ActiveCfg = Ad-Hoc|iPhone
+		{5B03F7C4-257D-467A-BFE8-97085E2744E0}.Ad-Hoc|Any CPU.Build.0 = Ad-Hoc|iPhone
+		{5B03F7C4-257D-467A-BFE8-97085E2744E0}.Ad-Hoc|iPhone.ActiveCfg = Ad-Hoc|iPhone
+		{5B03F7C4-257D-467A-BFE8-97085E2744E0}.Ad-Hoc|iPhone.Build.0 = Ad-Hoc|iPhone
+		{5B03F7C4-257D-467A-BFE8-97085E2744E0}.Ad-Hoc|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{5B03F7C4-257D-467A-BFE8-97085E2744E0}.Ad-Hoc|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{5B03F7C4-257D-467A-BFE8-97085E2744E0}.Ad-Hoc|Mixed Platforms.ActiveCfg = Ad-Hoc|iPhone
+		{5B03F7C4-257D-467A-BFE8-97085E2744E0}.Ad-Hoc|Mixed Platforms.Build.0 = Ad-Hoc|iPhone
+		{5B03F7C4-257D-467A-BFE8-97085E2744E0}.AppStore|Any CPU.ActiveCfg = AppStore|iPhone
+		{5B03F7C4-257D-467A-BFE8-97085E2744E0}.AppStore|Any CPU.Build.0 = AppStore|iPhone
+		{5B03F7C4-257D-467A-BFE8-97085E2744E0}.AppStore|iPhone.ActiveCfg = AppStore|iPhone
+		{5B03F7C4-257D-467A-BFE8-97085E2744E0}.AppStore|iPhone.Build.0 = AppStore|iPhone
+		{5B03F7C4-257D-467A-BFE8-97085E2744E0}.AppStore|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{5B03F7C4-257D-467A-BFE8-97085E2744E0}.AppStore|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{5B03F7C4-257D-467A-BFE8-97085E2744E0}.AppStore|Mixed Platforms.ActiveCfg = AppStore|iPhone
+		{5B03F7C4-257D-467A-BFE8-97085E2744E0}.AppStore|Mixed Platforms.Build.0 = AppStore|iPhone
+		{5B03F7C4-257D-467A-BFE8-97085E2744E0}.Debug|Any CPU.ActiveCfg = Debug|iPhoneSimulator
+		{5B03F7C4-257D-467A-BFE8-97085E2744E0}.Debug|Any CPU.Build.0 = Debug|iPhoneSimulator
+		{5B03F7C4-257D-467A-BFE8-97085E2744E0}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{5B03F7C4-257D-467A-BFE8-97085E2744E0}.Debug|iPhone.Build.0 = Debug|iPhone
+		{5B03F7C4-257D-467A-BFE8-97085E2744E0}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{5B03F7C4-257D-467A-BFE8-97085E2744E0}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{5B03F7C4-257D-467A-BFE8-97085E2744E0}.Debug|Mixed Platforms.ActiveCfg = Debug|iPhoneSimulator
+		{5B03F7C4-257D-467A-BFE8-97085E2744E0}.Debug|Mixed Platforms.Build.0 = Debug|iPhoneSimulator
+		{5B03F7C4-257D-467A-BFE8-97085E2744E0}.Release|Any CPU.ActiveCfg = Release|iPhoneSimulator
+		{5B03F7C4-257D-467A-BFE8-97085E2744E0}.Release|Any CPU.Build.0 = Release|iPhoneSimulator
+		{5B03F7C4-257D-467A-BFE8-97085E2744E0}.Release|iPhone.ActiveCfg = Release|iPhone
+		{5B03F7C4-257D-467A-BFE8-97085E2744E0}.Release|iPhone.Build.0 = Release|iPhone
+		{5B03F7C4-257D-467A-BFE8-97085E2744E0}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{5B03F7C4-257D-467A-BFE8-97085E2744E0}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+		{5B03F7C4-257D-467A-BFE8-97085E2744E0}.Release|Mixed Platforms.ActiveCfg = Release|iPhoneSimulator
+		{5B03F7C4-257D-467A-BFE8-97085E2744E0}.Release|Mixed Platforms.Build.0 = Release|iPhoneSimulator
 		{A14BBCE5-7251-4266-895B-7297F8148153}.Ad-Hoc|Any CPU.ActiveCfg = Release|Any CPU
 		{A14BBCE5-7251-4266-895B-7297F8148153}.Ad-Hoc|Any CPU.Build.0 = Release|Any CPU
 		{A14BBCE5-7251-4266-895B-7297F8148153}.Ad-Hoc|iPhone.ActiveCfg = Release|Any CPU
@@ -49,6 +81,9 @@ Global
 		{A14BBCE5-7251-4266-895B-7297F8148153}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
 		{A14BBCE5-7251-4266-895B-7297F8148153}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{A14BBCE5-7251-4266-895B-7297F8148153}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = ConcurPlatformServices\ConcurPlatformServices.csproj
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
