@@ -1,18 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 //------------------------------------
-using Concur.Connect;
-using Concur.Connect.V3;
 using Concur.Connect.V3.Serializable;
-using Concur.Connect.V1;
-using Concur.Connect.V1.Serializable;
 using Concur.Util;
 using Concur.Authentication;
 using System.IO;
