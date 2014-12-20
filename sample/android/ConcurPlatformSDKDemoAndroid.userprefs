@@ -1,0 +1,25 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.SelectDevice" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Properties/AndroidManifest.xml">
+    <Files>
+      <File FileName="ClientLibraryFacade.cs" Line="64" Column="64" />
+      <File FileName="Properties/AndroidManifest.xml" Line="12" Column="12" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State expanded="True">
+          <Node name="ConcurPlatformSDKSample_Android" expanded="True">
+            <Node name="References" expanded="True" />
+            <Node name="Properties" expanded="True">
+              <Node name="AndroidManifest.xml" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

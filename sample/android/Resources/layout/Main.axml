@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:p1="http://schemas.android.com/apk/res/android"
+    p1:layout_width="match_parent"
+    p1:layout_height="match_parent"
+    p1:id="@+id/relativeLayout1"
+    p1:minWidth="385dp"
+    p1:minHeight="800dp">
+    <TextView
+        p1:text="Client ID:"
+        p1:textAppearance="?android:attr/textAppearanceSmall"
+        p1:layout_width="wrap_content"
+        p1:layout_height="wrap_content"
+        p1:id="@+id/textView21"
+        p1:textSize="13dp"
+        p1:layout_marginTop="10.0dp" />
+    <EditText
+        p1:layout_width="220dp"
+        p1:layout_height="30.0dp"
+        p1:id="@+id/clientIdEditText"
+        p1:layout_marginTop="-5dp"
+        p1:layout_marginRight="0dp"
+        p1:layout_marginLeft="24.0dp"
+        p1:text=""
+        p1:textSize="12dp"
+        p1:layout_toRightOf="@id/textView21"
+        p1:layout_alignParentTop="false"
+        p1:layout_alignTop="@id/textView21" />
+    <TextView
+        p1:text="Login ID:"
+        p1:textAppearance="?android:attr/textAppearanceSmall"
+        p1:layout_width="wrap_content"
+        p1:layout_height="wrap_content"
+        p1:id="@+id/textView1"
+        p1:textSize="13dp"
+        p1:layout_marginTop="50.0dp" />
+    <EditText
+        p1:layout_width="220dp"
+        p1:layout_height="30.0dp"
+        p1:id="@+id/loginIdEditText"
+        p1:layout_marginTop="-5dp"
+        p1:layout_marginRight="0dp"
+        p1:layout_marginLeft="24.0dp"
+        p1:layout_below="@id/loginIdEditText"
+        p1:text=""
+        p1:textSize="12dp"
+        p1:layout_toRightOf="@id/textView1"
+        p1:layout_alignParentTop="false"
+        p1:layout_alignTop="@id/textView1" />
+    <TextView
+        p1:text="Password:"
+        p1:layout_width="wrap_content"
+        p1:layout_height="wrap_content"
+        p1:id="@+id/textView2"
+        p1:layout_marginTop="90.0dp"
+        p1:textSize="13dp" />
+    <EditText
+        p1:inputType="textPassword"
+        p1:text=""
+        p1:layout_width="150dp"
+        p1:layout_height="30.0dp"
+        p1:id="@+id/passwordEditText"
+        p1:layout_marginTop="-5dp"
+        p1:layout_alignParentTop="false"
+        p1:layout_marginLeft="12.0dp"
+        p1:layout_toRightOf="@id/textView2"
+        p1:layout_alignTop="@id/textView2"
+        p1:textSize="13dp" />
+    <Button
+        p1:text="Login"
+        p1:layout_width="wrap_content"
+        p1:layout_height="30.0dp"
+        p1:id="@+id/loginButton"
+        p1:layout_toRightOf="@+id/passwordEditText"
+        p1:layout_marginLeft="6dp"
+        p1:layout_alignTop="@id/passwordEditText"
+        p1:textSize="15dp"
+        p1:clickable="true" />
+    <TextView
+        p1:text="-----------------------------------------------------------------------------------------------"
+        p1:layout_width="wrap_content"
+        p1:layout_height="wrap_content"
+        p1:id="@+id/textView11"
+        p1:textSize="13dp"
+        p1:layout_marginTop="125dp" />
+    <TextView
+        p1:text="Report Name:"
+        p1:layout_width="wrap_content"
+        p1:layout_height="wrap_content"
+        p1:id="@+id/textView3"
+        p1:textSize="13dp"
+        p1:layout_marginTop="160dp" />
+    <EditText
+        p1:id="@+id/reportNameEditText"
+        p1:text="Test SDK Report1"
+        p1:layout_width="220dp"
+        p1:layout_height="30.0dp"
+        p1:layout_marginTop="-5dp"
+        p1:layout_alignParentTop="false"
+        p1:layout_marginLeft="17.0dp"
+        p1:layout_toRightOf="@id/textView3"
+        p1:layout_alignTop="@id/textView3"
+        p1:textSize="13dp" />
+    <TextView
+        p1:text="Vendor:"
+        p1:layout_width="wrap_content"
+        p1:layout_height="wrap_content"
+        p1:id="@+id/textView4"
+        p1:textSize="13dp"
+        p1:layout_marginTop="200dp" />
+    <EditText
+        p1:id="@+id/vendorEditText"
+        p1:text="DevCon Restaurant"
+        p1:layout_width="220dp"
+        p1:layout_height="30.0dp"
+        p1:layout_marginTop="-5dp"
+        p1:layout_alignParentTop="false"
+        p1:layout_alignTop="@id/textView4"
+        p1:layout_alignLeft="@id/reportNameEditText"
+        p1:textSize="13dp" />
+    <TextView
+        p1:text="Expense Type:"
+        p1:layout_width="wrap_content"
+        p1:layout_height="wrap_content"
+        p1:id="@+id/textView5"
+        p1:layout_marginTop="240dp"
+        p1:textSize="13dp" />
+    <TextView
+        p1:text="Amount:"
+        p1:layout_width="wrap_content"
+        p1:layout_height="wrap_content"
+        p1:id="@+id/textView6"
+        p1:textSize="13dp"
+        p1:layout_marginTop="280dp" />
+    <EditText
+        p1:id="@+id/amountEditText"
+        p1:layout_alignTop="@id/textView6"
+        p1:text="12.34"
+        p1:layout_width="220dp"
+        p1:layout_height="30.0dp"
+        p1:layout_marginTop="-5dp"
+        p1:layout_alignParentTop="false"
+        p1:layout_alignLeft="@id/reportNameEditText"
+        p1:textSize="13dp" />
+    <TextView
+        p1:text="Currency:"
+        p1:layout_width="wrap_content"
+        p1:layout_height="wrap_content"
+        p1:id="@+id/textView7"
+        p1:textSize="13dp"
+        p1:layout_marginTop="320dp" />
+    <EditText
+        p1:id="@+id/currencyEditText"
+        p1:layout_alignTop="@id/textView7"
+        p1:text="USD"
+        p1:layout_width="220dp"
+        p1:layout_height="30.0dp"
+        p1:layout_marginTop="-5dp"
+        p1:layout_alignParentTop="false"
+        p1:layout_alignLeft="@id/reportNameEditText"
+        p1:textSize="13dp" />
+    <TextView
+        p1:text="Date:"
+        p1:layout_width="wrap_content"
+        p1:layout_height="wrap_content"
+        p1:id="@+id/textView8"
+        p1:textSize="13dp"
+        p1:layout_marginTop="360dp" />
+    <EditText
+        p1:id="@+id/dateEditText"
+        p1:layout_alignTop="@id/textView8"
+        p1:text="10/30/2014 10:40:50 AM"
+        p1:layout_width="220dp"
+        p1:layout_height="30.0dp"
+        p1:layout_marginTop="-5dp"
+        p1:layout_alignParentTop="false"
+        p1:layout_alignLeft="@id/reportNameEditText"
+        p1:textSize="13dp" />
+    <TextView
+        p1:text="Payment Type:"
+        p1:layout_width="wrap_content"
+        p1:layout_height="wrap_content"
+        p1:id="@+id/textView9"
+        p1:textSize="13dp"
+        p1:layout_marginTop="400dp" />
+    <TextView
+        p1:text="Receipt Image:"
+        p1:layout_width="wrap_content"
+        p1:layout_height="wrap_content"
+        p1:id="@+id/textView10"
+        p1:textSize="13dp"
+        p1:layout_marginTop="440dp" />
+    <EditText
+        p1:id="@+id/receiptImageEditText"
+        p1:layout_alignTop="@id/textView10"
+        p1:text=""
+        p1:layout_width="150dp"
+        p1:layout_height="30.0dp"
+        p1:layout_marginTop="-5dp"
+        p1:layout_alignParentTop="false"
+        p1:layout_alignLeft="@id/reportNameEditText"
+        p1:textSize="13dp" />
+    <Button
+        p1:text="Image..."
+        p1:layout_width="wrap_content"
+        p1:layout_height="30.0dp"
+        p1:id="@+id/imageButton"
+        p1:layout_toRightOf="@+id/receiptImageEditText"
+        p1:layout_marginLeft="6dp"
+        p1:layout_alignTop="@id/receiptImageEditText"
+        p1:textSize="15dp" />
+    <Button
+        p1:text=" Create Report with Expense "
+        p1:layout_width="wrap_content"
+        p1:layout_height="40.0dp"
+        p1:id="@+id/CreateReportButton"
+        p1:layout_marginTop="50dp"
+        p1:textSize="18dp"
+        p1:layout_centerHorizontal="true"
+        p1:layout_alignTop="@id/textView10" />
+    <Spinner
+        p1:id="@+id/expenseTypeSpinner"
+        p1:layout_alignParentTop="false"
+        p1:layout_marginTop="-5dp"
+        p1:layout_alignTop="@id/textView5"
+        p1:layout_alignLeft="@id/reportNameEditText"
+        p1:minHeight="30dp"
+        p1:minWidth="220dp"
+        p1:layout_width="220dp"
+        p1:layout_height="30dp" />
+    <Spinner
+        p1:id="@+id/paymentTypeSpinner"
+        p1:layout_alignParentTop="false"
+        p1:layout_marginTop="-5dp"
+        p1:layout_alignTop="@id/textView9"
+        p1:layout_alignLeft="@id/reportNameEditText"
+        p1:minHeight="30dp"
+        p1:minWidth="220dp"
+        p1:layout_width="220dp"
+        p1:layout_height="30dp" />
+    <TextView
+        p1:text=""
+        p1:textAppearance="?android:attr/textAppearanceSmall"
+        p1:layout_width="wrap_content"
+        p1:layout_height="wrap_content"
+        p1:id="@+id/statusTextView"
+        p1:textSize="13dp"
+        p1:layout_alignParentBottom="true"
+        p1:layout_alignLeft="@id/textView10" />
+</RelativeLayout>
