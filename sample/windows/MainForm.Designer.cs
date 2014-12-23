@@ -1,4 +1,4 @@
-﻿namespace ConcurPlatformSdkSample
+﻿namespace Concur.Sample.ClientLibrary
 {
     partial class MainForm
     {
@@ -50,7 +50,6 @@
 			this.label12 = new System.Windows.Forms.Label();
 			this.TransactionDateTextBox = new System.Windows.Forms.TextBox();
 			this.label13 = new System.Windows.Forms.Label();
-			this.openReportImageFileDialog1 = new System.Windows.Forms.OpenFileDialog();
 			this.CreateEverythingButton = new System.Windows.Forms.Button();
 			this.ExpenseTypeComboBox = new System.Windows.Forms.ComboBox();
 			this.PaymentTypeComboBox = new System.Windows.Forms.ComboBox();
@@ -244,10 +243,6 @@
 			this.label13.TabIndex = 2;
 			this.label13.Text = "Payment Type:";
 			// 
-			// openReportImageFileDialog1
-			// 
-			this.openReportImageFileDialog1.FileName = "openFileDialog1";
-			// 
 			// CreateEverythingButton
 			// 
 			this.CreateEverythingButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -304,10 +299,6 @@
 			this.ExpenseEntryFileImageButton.Text = "Browse...";
 			this.ExpenseEntryFileImageButton.UseVisualStyleBackColor = true;
 			this.ExpenseEntryFileImageButton.Click += new System.EventHandler(this.ExpenseEntryFileImageButton_Click);
-			// 
-			// openEntryImageFileDialog2
-			// 
-			this.openEntryImageFileDialog2.FileName = "openFileDialog2";
 			// 
 			// label7
 			// 
@@ -404,7 +395,6 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox TransactionDateTextBox;
 		private System.Windows.Forms.Label label13;
-		private System.Windows.Forms.OpenFileDialog openReportImageFileDialog1;
         private System.Windows.Forms.Button CreateEverythingButton;
         private System.Windows.Forms.ComboBox ExpenseTypeComboBox;
         private System.Windows.Forms.ComboBox PaymentTypeComboBox;

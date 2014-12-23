@@ -1,18 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-//------------------------------------
-using Concur.Connect.V3;
-using Concur.Connect.V3.Serializable;
-using Concur.Connect.V1;
-using Concur.Connect.V1.Serializable;
-using Concur.Util;
-using Concur.Authentication;
-//------------------------------------
 
-namespace ConcurPlatformSdkSample
+namespace Concur.Sample.ClientLibrary
 {
     static class Program
     {

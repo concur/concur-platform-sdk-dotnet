@@ -1,14 +1,12 @@
 ﻿using System;
+using System.IO;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-//------------------------------------
-using Concur.Connect.V3.Serializable;
 using Concur.Util;
 using Concur.Authentication;
-using System.IO;
-//------------------------------------
+using Concur.Connect.V3.Serializable;
 
-namespace ConcurPlatformSdkSample
+namespace Concur.Sample.ClientLibrary
 {
     public partial class MainForm : Form
     {
@@ -20,7 +18,7 @@ namespace ConcurPlatformSdkSample
 		/// <summary>
 		/// Asynchronous handler activated when the user clicks the Login button.
 		/// </summary>		
-        private async Task LoginButton_ClickAsync()
+        private async void LoginButton_ClickAsync()
         {
             try
             {
@@ -35,12 +33,21 @@ namespace ConcurPlatformSdkSample
 				//Get the user company expense configuration needed to submit expense reports.
 				var groupConfig = await ClientLibraryFacade.GetGroupConfigurationAsync();
 				
-				//Get the default expense policy out of the expense configuration
+				//Determine the default expense policy out of the expense configuration, 
+				//so that the default policy will be selected by default on the UI.
 				var policies = groupConfig.Policies;
-				int defaultPolicyIndex = -1;	
-				for (defaultPolicyIndex = 0; defaultPolicyIndex < policies.Length && !policies[defaultPolicyIndex].IsDefault.Value; defaultPolicyIndex++);
+				int defaultPolicyIndex = -1;
+				for(int i = 0; i < policies.Length; i++)
+				{
+					if (policies[i].IsDefault.Value)
+					{
+						defaultPolicyIndex = i;
+						break;
+					}
+				}
 
 				//Display the list of expense policies obtained from the company configuration
+				//and select the default policy
 				ExpensePolicyListBox.DisplayMember = "Name";
 				ExpensePolicyListBox.Items.AddRange(groupConfig.Policies);
 				if (defaultPolicyIndex != -1) ExpensePolicyListBox.SelectedIndex = defaultPolicyIndex;
@@ -80,7 +87,7 @@ namespace ConcurPlatformSdkSample
 		{			
 			openEntryImageFileDialog2.Filter = "Jpeg files (*.jpg)|*.jpg|Png files (*.png)|*.png|Pdf files (*.pdf)|*.pdf|All files (*.*)|*.*";
 			DialogResult diaResult = openEntryImageFileDialog2.ShowDialog();
-			ExpenseEntryFileImagePathTextBox.Text = openEntryImageFileDialog2.FileName;
+			if (diaResult != DialogResult.Cancel) ExpenseEntryFileImagePathTextBox.Text = openEntryImageFileDialog2.FileName;
 		}
 
         private void CreateEverythingButton_Click(object sender, EventArgs e)
@@ -91,7 +98,7 @@ namespace ConcurPlatformSdkSample
 		/// <summary>
 		/// Asynchronous handler activated when the user clicks the Create Report button.
 		/// </summary>
-        private async Task CreateReportAsync()
+        private async void CreateReportAsync()
         {
             try
             {
