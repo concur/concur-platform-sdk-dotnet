@@ -1,23 +1,14 @@
 ﻿using System;
-using System.Drawing;
+using System.IO;
+using System.Linq;
+using System.Collections.Generic;
+using Concur.Util;
+using Concur.Connect.V3.Serializable;
 using MonoTouch.UIKit;
 using MonoTouch.Foundation;
-using System.Collections;
-using System.Collections.Generic;
-using Concur.Connect.V3.Serializable;
-using ConcurPlatformSdkSample;
-using Concur.Authentication;
-using Concur.Connect.V1;
-using Concur.Connect.V3;
-using Concur.Util;
-using System.Threading.Tasks;
-using System.Linq;
-using System.Threading;
 using MonoTouch.AssetsLibrary;
-using System.IO;
 
-
-namespace ConcurPlatformSdkSample
+namespace Concur.Sample.ClientLibrary
 {
 	public partial class MainViewController : UIViewController
 	{
@@ -101,7 +92,7 @@ namespace ConcurPlatformSdkSample
 		/// <summary>
 		/// Asynchronous processing of the login button click.
 		/// </summary>
-	 	async Task LoginButton_TouchUpInsideAsync ()
+	 	async void LoginButton_TouchUpInsideAsync ()
 		{
 			try
 			{
@@ -162,7 +153,7 @@ namespace ConcurPlatformSdkSample
 		/// Asynchronous processing of the image selection event.
 		/// The below is standard iOS code (via Xamarin classes) needed to extract the file name and the content of the selected image file
 		/// </summary>
-		async Task ImagePicker_FinishedPickingMediaAsync(UIImagePickerMediaPickedEventArgs e)
+		async void ImagePicker_FinishedPickingMediaAsync(UIImagePickerMediaPickedEventArgs e)
 		{
 			try
 			{
@@ -318,7 +309,7 @@ namespace ConcurPlatformSdkSample
 		/// <summary>
 		/// Process asynchronously the Create Report click.
 		/// </summary>
-		async Task CreateReportButton_TouchUpInsideAsync()
+		async void CreateReportButton_TouchUpInsideAsync()
 		{
 			try
 			{

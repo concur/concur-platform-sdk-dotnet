@@ -1,10 +1,9 @@
 ﻿using System;
 using System.IO;
-using MonoTouch;
 using MonoTouch.Foundation;
 using MonoTouch.AssetsLibrary;
 
-namespace ConcurPlatformSdkSample
+namespace Concur.Sample.ClientLibrary
 {
 	public class AssetLibraryReadStream : Stream
 	{

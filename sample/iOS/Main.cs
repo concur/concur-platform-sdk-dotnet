@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using MonoTouch.UIKit;
 
-using MonoTouch.Foundation;
-using MonoTouch.UIKit;
-
-namespace ConcurPlatformSdkSample
+namespace Concur.Sample.ClientLibrary
 {
 	public class Application
 	{

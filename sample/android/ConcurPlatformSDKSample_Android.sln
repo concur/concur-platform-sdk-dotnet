@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConcurPlatformSDKSample_Android", "ConcurPlatformSDKSample_Android.csproj", "{65CAA2D7-D527-4928-9760-7217FAF2DB62}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConcurPlatformSdkSample_Android", "ConcurPlatformSdkSample_Android.csproj", "{65CAA2D7-D527-4928-9760-7217FAF2DB62}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +15,6 @@ Global
 		{65CAA2D7-D527-4928-9760-7217FAF2DB62}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = ConcurPlatformSDKSample_Android.csproj
+		StartupItem = ConcurPlatformSdkSample_Android.csproj
 	EndGlobalSection
 EndGlobal

@@ -1,20 +1,17 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Concur.Connect.V3.Serializable;
+﻿using System.Threading.Tasks;
 using Concur.Authentication;
-using Concur.Connect;
+using Concur.Connect.V3.Serializable;
 using Concur.Util;
 using System;
 
-namespace ConcurPlatformSdkSample
+namespace Concur.Sample.ClientLibrary
 {
 	/// <summary>
-	/// In the sample app, all code that accesses the SDK library is isolated in this class.
-	/// So if you just want to see which SDK classes and methods we use in order to implement this sample you
-	/// can simply focus on reading the code below. Any other code in this sample is simply dealing with
-	/// reading and writing from/to UI controls or file system.
+	/// All sample projects (Windows, iOS, and Android) reference this current file in order to build.
+	/// All sample projects use this facade class in order to access the classes and methods in the SDK library.
+	/// So if you just want to see which SDK classes and methods we use in order to implement any of the provided 
+	/// samples then you simply need to read the code below. 
+	/// Any remaining code in our samples is simply dealing with reading and writing from/to UI controls or file system.
 	/// </summary>
 	class ClientLibraryFacade
 	{
@@ -45,7 +42,7 @@ namespace ConcurPlatformSdkSample
 		
 		/// <summary>
 		/// This facade method shows how to use the SDK to get the expense group configurartion object for the current user.
-		/// The returned object encapsulates the user's company configuration, needed to submit a report. 
+		/// The returned object encapsulates configuration for the user and/or the company, needed to create a report. 
 		/// Notice that the oauth credential of the current user was provided when the service object was instantiated,
 		/// so the service object always makes calls on the behalf of that user.
 		/// </summary>
@@ -82,7 +79,7 @@ namespace ConcurPlatformSdkSample
 			byte[] expenseImageData,
 			ReceiptFileType imageType)
 		{
-			var report = await serviceV3.CreateExpenseReportsAsync(new ReportPost() { Name = reportName });
+			var report = await serviceV3.CreateExpenseReportsAsync(new ReportPost { Name = reportName });
 			var reportEntry = await serviceV3.CreateExpenseEntriesAsync(new EntryPost()
 				{
 					VendorDescription = vendorDescription,

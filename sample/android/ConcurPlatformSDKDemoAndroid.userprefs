@@ -8,7 +8,7 @@
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
-          <Node name="ConcurPlatformSDKSample_Android" expanded="True">
+          <Node name="ConcurPlatformSdkSample_Android" expanded="True">
             <Node name="References" expanded="True" />
             <Node name="Properties" expanded="True">
               <Node name="AndroidManifest.xml" selected="True" />

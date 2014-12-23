@@ -1,21 +1,16 @@
 ﻿using System;
-using Android.App;
-using Android.Content;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
-using Android.OS;
+using System.IO;
 using System.Collections.Generic;
-using Concur.Connect.V3.Serializable;
-using System.Threading.Tasks;
-using System.Threading;
-using System.Text;
+using Android.App;
+using Android.OS;
+using Android.Content;
+using Android.Widget;
 using Android.Provider;
 using Android.Database;
 using Android.Graphics;
-using System.IO;
+using Concur.Connect.V3.Serializable;
 
-namespace ConcurPlatformSdkSample
+namespace Concur.Sample.ClientLibrary
 {
     [Activity(Label = "Concur Platform SDK Sample", MainLauncher = true, Icon = "@drawable/ConcurIcon")]
     public class MainActivity : Activity
@@ -114,7 +109,7 @@ namespace ConcurPlatformSdkSample
 		/// <summary>
 		/// Process Create Report asynchronously
 		/// </summary>
-        protected async Task CreateReportAsync()
+        protected async void CreateReportAsync()
         {
             try
             {
@@ -128,7 +123,6 @@ namespace ConcurPlatformSdkSample
                 var amountView = FindViewById<EditText>(Resource.Id.amountEditText);
                 var currencyView = FindViewById<EditText>(Resource.Id.currencyEditText);
                 var dateView = FindViewById<EditText>(Resource.Id.dateEditText);
-                var receiptImageView = FindViewById<EditText>(Resource.Id.receiptImageEditText);
                 var expenseTypeView = FindViewById<Spinner>(Resource.Id.expenseTypeSpinner);
                 var paymentTypeView = FindViewById<Spinner>(Resource.Id.paymentTypeSpinner);
 
@@ -173,7 +167,7 @@ namespace ConcurPlatformSdkSample
 		/// <summary>
 		/// Process asynchronously the Login button click.
 		/// </summary>
-        protected async Task LoginAsync()
+        protected async void LoginAsync()
         {
             try
             {

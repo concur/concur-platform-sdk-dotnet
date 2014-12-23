@@ -1,8 +1,7 @@
-﻿using System;
+﻿using MonoTouch.UIKit;
 using System.Collections.Generic;
-using MonoTouch.UIKit;
 
-namespace ConcurPlatformSdkSample
+namespace Concur.Sample.ClientLibrary
 {
 	/// <summary>
 	/// MVC model for a custom Picker control we used when displaying Expense Types and Payment Types.

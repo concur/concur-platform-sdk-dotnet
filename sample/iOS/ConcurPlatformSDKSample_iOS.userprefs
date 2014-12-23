@@ -2,12 +2,7 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.IPhone6.8.1" />
   <MonoDevelop.Ide.Workbench ActiveDocument="MainViewController.cs">
     <Files>
-      <File FileName="MainViewController.cs" Line="22" Column="22" />
-      <File FileName="Main.cs" Line="1" Column="1" />
-      <File FileName="MyPickerModel.cs" Line="1" Column="1" />
-      <File FileName="AppDelegate.cs" Line="1" Column="1" />
-      <File FileName="AssetLibraryReadStream.cs" Line="1" Column="1" />
-      <File FileName="../_shared/ClientLibraryFacade.cs" Line="1" Column="1" />
+      <File FileName="MainViewController.cs" Line="16" Column="16" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

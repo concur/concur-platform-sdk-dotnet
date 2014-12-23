@@ -9,7 +9,7 @@ using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 using System.CodeDom.Compiler;
 
-namespace ConcurPlatformSdkSample
+namespace Concur.Sample.ClientLibrary
 {
 	[Register ("MainViewController")]
 	partial class MainViewController

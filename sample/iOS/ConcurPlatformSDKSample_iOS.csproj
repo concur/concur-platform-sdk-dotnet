@@ -6,10 +6,11 @@
     <ProjectTypeGuids>{6BC8ED88-2882-458C-8E55-DFD12B67127B};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <ProjectGuid>{5B03F7C4-257D-467A-BFE8-97085E2744E0}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>ConcurPlatformSDKSample_iOS</RootNamespace>
+    <RootNamespace>ConcurPlatformSdkSample</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
+    <AssemblyName>ConcurPlatformSDKSample_iOS</AssemblyName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
     <DebugSymbols>true</DebugSymbols>
@@ -24,7 +25,6 @@
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <MtouchDebug>true</MtouchDebug>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <AssemblyName>ConcurPlatformSDKSample_iOS</AssemblyName>
     <MtouchI18n>
     </MtouchI18n>
     <MtouchArch>i386</MtouchArch>
@@ -39,7 +39,6 @@
     <ConsolePause>false</ConsolePause>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <AssemblyName>ConcurPlatformSDKSample_iOS</AssemblyName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
     <DebugSymbols>true</DebugSymbols>
@@ -54,7 +53,6 @@
     <MtouchDebug>true</MtouchDebug>
     <CodesignKey>iPhone Developer</CodesignKey>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <AssemblyName>ConcurPlatformSDKSample_iOS</AssemblyName>
     <IpaPackageName>
     </IpaPackageName>
   </PropertyGroup>
@@ -68,7 +66,6 @@
     <ConsolePause>false</ConsolePause>
     <CodesignKey>iPhone Developer</CodesignKey>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <AssemblyName>ConcurPlatformSDKSample_iOS</AssemblyName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Ad-Hoc|iPhone' ">
     <DebugType>full</DebugType>
@@ -82,7 +79,6 @@
     <CodesignProvision>Automatic:AdHoc</CodesignProvision>
     <CodesignKey>iPhone Distribution</CodesignKey>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <AssemblyName>ConcurPlatformSDKSample_iOS</AssemblyName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'AppStore|iPhone' ">
     <DebugType>full</DebugType>
@@ -95,7 +91,6 @@
     <ConsolePause>false</ConsolePause>
     <CodesignProvision>Automatic:AppStore</CodesignProvision>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <AssemblyName>ConcurPlatformSDKSample_iOS</AssemblyName>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
