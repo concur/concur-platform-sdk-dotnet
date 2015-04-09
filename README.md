@@ -12,7 +12,7 @@ To try this library, you may want to create a sandbox company at Concur. [Follow
 ## Installation
 
 To install Concur Platform from the [Package Manager Console](http://docs.nuget.org/docs/start-here/using-the-package-manager-console), run the following command:
-    Install-Package ConcurPlatform
+        Install-Package ConcurPlatform
 Otherwise, to install Concur Platform using the [Nuget command line tool](https://docs.nuget.org/consume/command-line-reference), run the following command:
     nuget install ConcurPlatform
 
