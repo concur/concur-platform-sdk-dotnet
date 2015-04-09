@@ -2,16 +2,16 @@ Concur Platform SDK for .NET Framework and Xamarin
 ==================================================
 
 This SDK contains the following:
-* .NET Portable Class Library (which also works on Xamarin) for abstracting details on how to call and consume Concur web services.
-* Sample of a working app in Android that uses the portable library to call Concur web services.
-* Sample of a working app in iOS that uses the portable library to call Concur web services.
-* Sample of a working app in Windows that uses the portable library to call Concur web services.
+* .NET Portable Class Library source code (which also works on Xamarin) for abstracting details on how to call and consume Concur web services.
+* Source code for an Android sample app that uses the portable library to call Concur web services.
+* Source code for an iOS sample app that uses the portable library to call Concur web services.
+* Source code for a Windows sample app that uses the portable library to call Concur web services.
 
-To try this library, you may want to create a sandbox company at Concur. [Follow the registration process described here](https://developer.concur.com/register) to create a sandbox company. The user credentials obtained via the registration process can be used with the portable library to access data in the sandbox company.
+To try this library, you may want to create a sandbox company at Concur by [following the registration process described here](https://developer.concur.com/register). The user credentials obtained via the registration process can be used with the portable library to access data in your sandbox company.
 
 ## Installation
 
-To install Concur Platform from the [Package Manager Console](http://docs.nuget.org/docs/start-here/using-the-package-manager-console), run the following command:
+To install Concur Platform from inside the [Package Manager Console](http://docs.nuget.org/docs/start-here/using-the-package-manager-console), run the following command:
 
     Install-Package ConcurPlatform
 
