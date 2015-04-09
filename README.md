@@ -2,7 +2,7 @@ Concur Platform SDK for .NET Framework and Xamarin
 ==================================================
 
 This SDK contains the following:
-* .NET Portable Class Library (which also works on Xamarin) for abstracting details on how to call and consume Concur web services. The portable library contains intellisense in its classes, methods, and parameters; making it very easy to discover how to use the library. 
+* .NET Portable Class Library (which also works on Xamarin) for abstracting details on how to call and consume Concur web services.
 * Sample of a working app in Android that uses the portable library to call Concur web services.
 * Sample of a working app in iOS that uses the portable library to call Concur web services.
 * Sample of a working app in Windows that uses the portable library to call Concur web services.
@@ -20,6 +20,7 @@ NOTE: Navigate to http://www.nuget.org/packages/ConcurPlatform/ if you want to s
 
 
 
+## PARKING LOT TEXT
 
  
 
