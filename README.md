@@ -7,9 +7,30 @@ This SDK contains the following:
 * Source code for an iOS sample app that uses the portable library to call Concur web services.
 * Source code for a Windows sample app that uses the portable library to call Concur web services.
 
+
+## User Credentials
+
+The portable library requires user credentials in order to make web services calls on the behalf of a user. If you want, you can obtain user credentials to a brand new sandbox company at Concur by [following the sandbox registration process described here](https://developer.concur.com/register).  
+
+
 ## Installation
 
 The portable class library included in this SDK is already compiled and uploaded at [http://www.nuget.org/packages/ConcurPlatform](http://www.nuget.org/packages/ConcurPlatform) as a Nuget package, named "*ConcurPlatform*".
+
+
+### Referecing from Visual Studio
+
+To reference our Nuget package from a Visual Studio project, [follow the instructions described here](http://docs.nuget.org/consume/package-manager-dialog) and use "ConcurPlatform" as the package name to search for.
+
+
+### Referencing from Xamarin
+
+To reference our Nuget package from a Xamarin project, [follow the instructions described here](http://developer.xamarin.com/guides/cross-platform/application_fundamentals/nuget_walkthrough) and use "ConcurPlatform" as the package name to search for.
+
+
+
+
+
 
 
 
