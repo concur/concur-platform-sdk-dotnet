@@ -8,7 +8,7 @@ This SDK contains the following:
 * Source code for a Windows sample app that uses the portable library to call Concur web services.
 
 
-## User Credentials
+## User Credentials to Call our Web Services
 
 The portable library requires user credentials in order to make web services calls on the behalf of a user. If you want, you can obtain user credentials to a brand new sandbox company at Concur by [following the sandbox registration process described here](https://developer.concur.com/register).  
 
@@ -27,12 +27,23 @@ To reference our Nuget package from a Visual Studio project, [follow the instruc
 
 To reference our Nuget package from a Xamarin project, [follow the instructions described here](http://developer.xamarin.com/guides/cross-platform/application_fundamentals/nuget_walkthrough) and use "ConcurPlatform" as the package name to search for.
 
+### Building SDK Samples
+
+The SDK samples provided here reference our portable library Nuget package, even though this git repository also provides the source code for the portable library. Depending on how you choose to compile the samples (Xamarin versus Visual Studio, IDE version, build versus rebuild, etc.) the compilation may fail because it doesn't understand the project reference to our Nuget package. If you get an error when trying to compile the samples, simply reference again the Nuget package as explained above for the different IDEs.
 
 
 
 
 
 
+
+
+## --------------------------- BEGIN Parking Lot Text ---------------------------------------
+
+abstracting calls for the following web services in the concur platform:
+
+SDK for the [Concur Platform](http://developer.concur.com). For more information on the set of platform services, see the [Web services overview](https://developer.concur.com/get-started/webservices-overview) document on the developer portal.
+Register for a [developer Sandbox here](https://developer.concur.com/register).
 
 
 To reference the 
@@ -42,13 +53,6 @@ The source code contained in this repository is self-contained and it doesn't ha
 ## User Credentials
 
 The portable library requires user credentials in order to make web services calls on the behalf of a user. If you want, you can obtain user credentials to a brand new sandbox company at Concur by [following the sandbox registration process described here](https://developer.concur.com/register).  
-
-
-
-
-
-
-
 
 You need user credentials in order to call 
 
@@ -61,15 +65,6 @@ Otherwise, to install Concur Platform using the [Nuget command line tool](https:
     nuget install ConcurPlatform
 
 NOTE: Navigate to http://www.nuget.org/packages/ConcurPlatform/ if you want to see further information about the ConcurPlatform package.
-
-
-
-## --------------------------- BEGIN Parking Lot Text ---------------------------------------
-
-abstracting calls for the following web services in the concur platform:
-
-SDK for the [Concur Platform](http://developer.concur.com). For more information on the set of platform services, see the [Web services overview](https://developer.concur.com/get-started/webservices-overview) document on the developer portal.
-Register for a [developer Sandbox here](https://developer.concur.com/register).
 
 ## --------------------------- END Parking Lot Text ---------------------------------------
 
