@@ -1,4 +1,4 @@
-Concur Platform SDK for .NET Framework and Xamarin
+Concur Platform SDK for .NET and Xamarin
 ==================================================
 
 This SDK contains the following:
@@ -8,15 +8,12 @@ This SDK contains the following:
 * Source code for a Windows sample app that uses the portable library to call Concur web services.
 
 
-## User Credentials to Call our Web Services
-
-The portable library requires user credentials in order to make web services calls on the behalf of a user. If you want, you can obtain user credentials to a brand new sandbox company at Concur by [following the sandbox registration process described here](https://developer.concur.com/register).  
-
-
-## Installation
+## Nuget Package
 
 The portable class library included in this SDK is already compiled and uploaded at [http://www.nuget.org/packages/ConcurPlatform](http://www.nuget.org/packages/ConcurPlatform) as a Nuget package, named "*ConcurPlatform*".
 
+
+## Installation
 
 ### Referecing from Visual Studio
 
@@ -27,10 +24,15 @@ To reference our Nuget package from a Visual Studio project, [follow the instruc
 
 To reference our Nuget package from a Xamarin project, [follow the instructions described here](http://developer.xamarin.com/guides/cross-platform/application_fundamentals/nuget_walkthrough) and use "ConcurPlatform" as the package name to search for.
 
+
 ### Building SDK Samples
 
 The SDK samples provided here reference our portable library Nuget package, even though this git repository also provides the source code for the portable library. Depending on how you choose to compile the samples (Xamarin versus Visual Studio, IDE version, build versus rebuild, etc.) the compilation may fail because it doesn't understand the project reference to our Nuget package. If you get an error when trying to compile the samples, simply reference again the Nuget package as explained above for the different IDEs.
 
+
+## User Credentials to Call our Web Services
+
+The portable library requires user credentials in order to make web services calls on the behalf of a user. If you want, you can obtain user credentials to a brand new sandbox company at Concur by [following the sandbox registration process described here](https://developer.concur.com/register).  
 
 
 
