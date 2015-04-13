@@ -1,4 +1,4 @@
-Concur Platform SDK for .NET and Xamarin
+Concur Platform SDK for .NET Framework and Xamarin
 ==================================================
 
 This SDK contains the following:
