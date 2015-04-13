@@ -31,7 +31,7 @@ The samples provided in this SDK reference our Nuget package. Depending on how y
 
 # User Credentials
 
-The ConcurPlatform library requires user credentials in order to make web services calls on the behalf of a user. If you want, you can obtain user credentials to a brand new sandbox company at Concur by [following the sandbox registration process described here](https://developer.concur.com/register).  
+The ConcurPlatform library requires user credentials (e.g. OAuth access token) in order to make web services calls on the behalf of a user. If you want, you can obtain user credentials to a brand new sandbox company at Concur by [following the sandbox registration process described here](https://developer.concur.com/register).  
 
 
 # Hello Expense Report
