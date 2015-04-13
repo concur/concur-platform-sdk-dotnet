@@ -38,16 +38,17 @@ The ConcurPlatform library requires user credentials in order to make web servic
 
 If you just want a quick and small sample showing how to start using the ConcurPlatform library then the following code snippet shows how to create an empty expense report named "Hello Expense Report".
 
-    using Concur.Connect.V3;
-    using Concur.Connect.V3.Serializable;
-    . . .
-    static async void HelloExpenseReportSample()
-    {
-        var concur = new ConnectService(accessToken: <b>ProvideHereYourOAuthAccessToken</b>);
-        var report = await concur.CreateExpenseReportsAsync( new ReportPost() { Name = "Hello Expense Report" } );
-        Console.WriteLine("Succefully created a report with ID = " + report.ID);
-    }
-
+```C#
+using Concur.Connect.V3;
+using Concur.Connect.V3.Serializable;
+. . .
+static async void HelloExpenseReportSample()
+{
+    var concur = new ConnectService(accessToken: ProvideHereYourOAuthAccessToken);
+    var report = await concur.CreateExpenseReportsAsync( new ReportPost() { Name = "Hello Expense Report" } );
+    Console.WriteLine("Succefully created a report with ID = " + report.ID);
+}
+```
 
 ## Web Services Abstracted by ConcurPlatform Library
 
