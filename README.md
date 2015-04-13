@@ -42,7 +42,8 @@ If you just want a quick and small sample showing how to start using the ConcurP
 using Concur.Connect.V3;
 using Concur.Connect.V3.Serializable;
 . . .
-static async void HelloExpenseReportSample() {
+static async void HelloExpenseReportSample() 
+{
   var concur = new ConnectService(accessToken: __ProvideHereYourOAuthAccessToken__ );
   var report = await concur.CreateExpenseReportsAsync( 
     new ReportPost() { Name = "Hello Expense Report" }
