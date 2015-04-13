@@ -10,18 +10,19 @@ This SDK contains the following:
 
 # Nuget Package
 
-The ConcurPlatform library source code (included in this SDK) is already compiled and uploaded on [http://www.nuget.org/packages/ConcurPlatform](http://www.nuget.org/packages/ConcurPlatform) as a Nuget package named "*ConcurPlatform*". __NOTE: this package targets .NET Framework version v4.5 or later, so make sure your project properties targets this version of .NET Framework otherwise this package may not be listed in the results when you search for it from inside your development project.__
+The ConcurPlatform library source code (included in this SDK) is already compiled and uploaded on [http://www.nuget.org/packages/ConcurPlatform](http://www.nuget.org/packages/ConcurPlatform) as a Nuget package named "*ConcurPlatform*". __NOTE: this package targets .NET Framework version 4.5 or later, so make sure your project properties targets this version of .NET Framework otherwise this package may not be listed in the results when you search for it from inside your development project.__
 
 
 # Installation
 
 ## Referencing our Nuget Package from Visual Studio
 
-To reference our Nuget package from any Visual Studio project, [follow the instructions described here](http://docs.nuget.org/consume/package-manager-dialog) and use "*ConcurPlatform*" as the package name to search for.
+To reference our Nuget package from any Visual Studio project, [follow the instructions described here](http://docs.nuget.org/consume/package-manager-dialog) and use "*ConcurPlatform*" as the package name to search for. Also make sure your development project targets .NET Framework version 4.5 or later otherwise the ConcurPlatform package may not be found when searched for. Anyway, for your information, __we have seen sometimes a buggy behavior in VS where the only way for it to successfully find and reference the package was by using Package Manager Console [as explained here](http://docs.nuget.org/consume/package-manager-console).__
 
 ## Referencing our Nuget Package from Xamarin
 
 To reference our Nuget package from any Xamarin project, [follow the instructions described here](http://developer.xamarin.com/guides/cross-platform/application_fundamentals/nuget_walkthrough) and use "*ConcurPlatform*" as the package name to search for.
+
 
 ## Building our SDK Samples
 
@@ -36,8 +37,6 @@ The ConcurPlatform library requires user credentials in order to make web servic
 # Hello Expense Report
 
 If you just want a quick and small sample showing how to start using the ConcurPlatform library then the following code snippet shows how to create an empty expense report named "Hello Expense Report".
-
-
 
 
 ## Web Services Abstracted by ConcurPlatform Library
