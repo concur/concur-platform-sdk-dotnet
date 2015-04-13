@@ -44,7 +44,7 @@ using Concur.Connect.V3.Serializable;
 . . .
 static async void HelloExpenseReportSample()
 {
-    var concur = new ConnectService(accessToken: _/*ProvideHereYourOAuthAccessToken*/);
+    var concur = new ConnectService(accessToken: a /*ProvideHereYourOAuthAccessToken*/);
     var report = await concur.CreateExpenseReportsAsync( new ReportPost() { Name = "Hello Expense Report" } );
     Console.WriteLine("Succefully created a report with ID = " + report.ID);
 }
