@@ -10,7 +10,7 @@ This SDK contains the following:
 
 # Nuget Package
 
-The ConcurPlatform library source code (included in this SDK) is already compiled and uploaded on [http://www.nuget.org/packages/ConcurPlatform](http://www.nuget.org/packages/ConcurPlatform) as a Nuget package named "*ConcurPlatform*". __NOTE: this package targets .NET Framework version v4.5 or later, so make sure your project properties target this version of .NET Framework otherwise this package won't be listed in the results when you search for it from inside your IDE.__
+The ConcurPlatform library source code (included in this SDK) is already compiled and uploaded on [http://www.nuget.org/packages/ConcurPlatform](http://www.nuget.org/packages/ConcurPlatform) as a Nuget package named "*ConcurPlatform*". __NOTE: this package targets .NET Framework version v4.5 or later, so make sure your project properties targets this version of .NET Framework otherwise this package may not be listed in the results when you search for it from inside your development project.__
 
 
 # Installation
