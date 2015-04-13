@@ -36,8 +36,11 @@ The ConcurPlatform library requires user credentials in order to make web servic
 ## Web Services Abstracted by ConcurPlatform Library
 
 The following REST web services are abstracted by our ConcurPlatform library:
+
 1. Authentication Services. Specifically, the [Native Flow Token service](https://developer.concur.com/oauth-20/native-flow), the [Refresh Token service](https://developer.concur.com/oauth-20/refreshing-access-tokens), and the [Revoke Token service](https://developer.concur.com/oauth-20/working-access-tokens/revoking-access-tokens).
+
 2. [Concur Platform web services version 3.0](https://www.concursolutions.com/api/docs/index.html).  
+
 3. [Image Services version 1.0](https://developer.concur.com/imaging/image-resource/image-resource-post). Specifically the services for posting an image to a report, posting an image to a report entry, and posting an image to an invoice (also know as *payment request*).
 
 
