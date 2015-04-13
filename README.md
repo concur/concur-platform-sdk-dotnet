@@ -15,7 +15,7 @@ The ConcurPlatform library source code (included in this SDK) is already compile
 
 # Installation
 
-## Referencing our NuGet Package from Visual Studio
+### Referencing our NuGet Package from Visual Studio
 
 To reference our NuGet package from any Visual Studio project, [follow the instructions described here](http://docs.nuget.org/consume/package-manager-dialog) and use "*ConcurPlatform*" as the package name to search for. Also make sure your development project targets .NET Framework version 4.5 or later otherwise the ConcurPlatform package may not be found when searched for. Anyway, for your information, __we have seen sometimes a buggy behavior in VS where the only way for it to successfully find and reference a package is by using Package Manager Console [as explained here](http://docs.nuget.org/consume/package-manager-console).__
 
@@ -34,9 +34,9 @@ The samples provided in this SDK reference our NuGet package. Depending on how y
 The ConcurPlatform library requires user credentials (e.g. OAuth access token) in order to make web services calls on the behalf of a user. If you want, you can obtain user credentials to a brand new sandbox company at Concur by [following the sandbox registration process described here](https://developer.concur.com/register).  
 
 
-# Hello Expense Report
+# Hello Expense Report Sample
 
-If you just want a quick and small sample showing how to start using the ConcurPlatform library then the following code snippet shows how to create an empty expense report named "Hello Expense Report".
+If you just want to see a quick and small sample of how to use the ConcurPlatform library then the following code snippet shows how to create an empty expense report named "Hello Expense Report".
 
 ```C#
 using Concur.Connect.V3;
@@ -52,7 +52,7 @@ static async void HelloExpenseReportSample()
 }
 ```
 
-# ConcurPlatform Library Services in Details
+# ConcurPlatform Library in Details
 
 
 ## Services Abstracted by the ConcurPlatform Library
