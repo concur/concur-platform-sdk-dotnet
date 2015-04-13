@@ -2,10 +2,10 @@ Concur Platform SDK for .NET and Xamarin
 ==================================================
 
 This SDK contains the following:
-* Source code for the ConcurPlatform library. This is a .NET Portable Class Library, which also works on Xamarin projects, and which abstracts details on how to call and consume Concur Platform web services.
-* Source code for an Android sample app that uses the ConcurPlatform library to call Concur web services.
-* Source code for an iOS sample app that uses the ConcurPlatform library to call Concur web services.
-* Source code for a Windows sample app that uses the ConcurPlatform library to call Concur web services.
+* Source code for the __ConcurPlatform library__. This is a __.NET Portable Class Library__, which also works on __Xamarin__ projects, and which abstracts details on how to call and consume Concur Platform web services.
+* Source code for an __Android__ sample app that uses the ConcurPlatform library to call Concur web services.
+* Source code for an __iOS__ sample app that uses the ConcurPlatform library to call Concur web services.
+* Source code for a __Windows__ sample app that uses the ConcurPlatform library to call Concur web services.
 
 
 # Nuget Package
