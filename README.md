@@ -8,25 +8,25 @@ This SDK contains the following:
 * Source code for a __Windows__ sample app that uses the ConcurPlatform library to call Concur web services.
 
 
-# Nuget Package
+# NuGet Package
 
-The ConcurPlatform library source code (included in this SDK) is already compiled and uploaded on [http://www.nuget.org/packages/ConcurPlatform](http://www.nuget.org/packages/ConcurPlatform) as a Nuget package named "*ConcurPlatform*". __NOTE: this package targets .NET Framework version 4.5 or later, so make sure your project properties targets this version of .NET Framework otherwise this package may not be listed in the results when you search for it from inside your development project.__
+The ConcurPlatform library source code (included in this SDK) is already compiled and uploaded on [http://www.nuget.org/packages/ConcurPlatform](http://www.nuget.org/packages/ConcurPlatform) as a NuGet package named "*ConcurPlatform*". __NOTE: this package targets .NET Framework version 4.5 or later, so make sure your project properties targets this version of .NET Framework otherwise this package may not be listed in the results when you search for it from inside your development project.__
 
 
 # Installation
 
-## Referencing our Nuget Package from Visual Studio
+## Referencing our NuGet Package from Visual Studio
 
-To reference our Nuget package from any Visual Studio project, [follow the instructions described here](http://docs.nuget.org/consume/package-manager-dialog) and use "*ConcurPlatform*" as the package name to search for. Also make sure your development project targets .NET Framework version 4.5 or later otherwise the ConcurPlatform package may not be found when searched for. Anyway, for your information, __we have seen sometimes a buggy behavior in VS where the only way for it to successfully find and reference the package was by using Package Manager Console [as explained here](http://docs.nuget.org/consume/package-manager-console).__
+To reference our NuGet package from any Visual Studio project, [follow the instructions described here](http://docs.nuget.org/consume/package-manager-dialog) and use "*ConcurPlatform*" as the package name to search for. Also make sure your development project targets .NET Framework version 4.5 or later otherwise the ConcurPlatform package may not be found when searched for. Anyway, for your information, __we have seen sometimes a buggy behavior in VS where the only way for it to successfully find and reference a package is by using Package Manager Console [as explained here](http://docs.nuget.org/consume/package-manager-console).__
 
-## Referencing our Nuget Package from Xamarin
+## Referencing our NuGet Package from Xamarin
 
-To reference our Nuget package from any Xamarin project, [follow the instructions described here](http://developer.xamarin.com/guides/cross-platform/application_fundamentals/nuget_walkthrough) and use "*ConcurPlatform*" as the package name to search for.
+To reference our NuGet package from any Xamarin project, [follow the instructions described here](http://developer.xamarin.com/guides/cross-platform/application_fundamentals/nuget_walkthrough) and use "*ConcurPlatform*" as the package name to search for.
 
 
 ## Building our SDK Samples
 
-The samples provided in this SDK reference our Nuget package. Depending on how you choose to compile the samples (Xamarin versus Visual Studio, IDE version, build versus rebuild, etc.) the compilation may fail because it may not succeed to resolve the reference to our Nuget package. If you get an error when trying to compile the samples, simply reference again the Nuget package as explained in the above sections.
+The samples provided in this SDK reference our NuGet package. Depending on how you choose to compile the samples (Xamarin versus Visual Studio, IDE version, build versus rebuild, etc.) the compilation may fail because it may not succeed to resolve the reference to our NuGet package. If you get an error when trying to compile the samples, simply reference again the NuGet package as explained in the above sections.
 
 
 # User Credentials
@@ -113,7 +113,7 @@ To install Concur Platform from inside the [Package Manager Console](http://docs
 
     Install-Package ConcurPlatform
 
-Otherwise, to install Concur Platform using the [Nuget command line tool](https://docs.nuget.org/consume/command-line-reference), run the following command:
+Otherwise, to install Concur Platform using the [NuGet command line tool](https://docs.nuget.org/consume/command-line-reference), run the following command:
 
     nuget install ConcurPlatform
 
