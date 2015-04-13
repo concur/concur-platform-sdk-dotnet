@@ -8,29 +8,36 @@ This SDK contains the following:
 * Source code for a Windows sample app that uses the ConcurPlatform library to call Concur web services.
 
 
-## Nuget Package
+# Nuget Package
 
 The ConcurPlatform library source code (included in this SDK) is already compiled and uploaded on [http://www.nuget.org/packages/ConcurPlatform](http://www.nuget.org/packages/ConcurPlatform) as a Nuget package named "*ConcurPlatform*".
 
 
 # Installation
 
-### Referencing our Nuget Package from Visual Studio
+## Referencing our Nuget Package from Visual Studio
 
 To reference our Nuget package from any Visual Studio project, [follow the instructions described here](http://docs.nuget.org/consume/package-manager-dialog) and use "*ConcurPlatform*" as the package name to search for.
 
-### Referencing our Nuget Package from Xamarin
+## Referencing our Nuget Package from Xamarin
 
 To reference our Nuget package from any Xamarin project, [follow the instructions described here](http://developer.xamarin.com/guides/cross-platform/application_fundamentals/nuget_walkthrough) and use "*ConcurPlatform*" as the package name to search for.
 
-### Building our SDK Samples
+## Building our SDK Samples
 
 The samples provided in this SDK reference our Nuget package. Depending on how you choose to compile the samples (Xamarin versus Visual Studio, IDE version, build versus rebuild, etc.) the compilation may fail because it may not succeed to resolve the reference to our Nuget package. If you get an error when trying to compile the samples, simply reference again the Nuget package as explained in the above sections.
 
 
-## User Credentials for Calling our Web Services
+# User Credentials
 
 The ConcurPlatform library requires user credentials in order to make web services calls on the behalf of a user. If you want, you can obtain user credentials to a brand new sandbox company at Concur by [following the sandbox registration process described here](https://developer.concur.com/register).  
+
+
+# Hello Expense Report
+
+If you just want a quick and small sample showing how to start using the ConcurPlatform library then the following code snippet shows how to use it to create an empty expense report named "Hello Expense Report".
+
+
 
 
 ## Web Services Abstracted by ConcurPlatform Library
@@ -44,7 +51,7 @@ The following REST web services are abstracted by our ConcurPlatform library:
 3. [Image Services version 1.0](https://developer.concur.com/imaging/image-resource/image-resource-post). Specifically the services for posting an image to a report, posting an image to a report entry, and posting an image to an invoice (also know as *payment request*).
 
 
-test 4
+
 
 
 
