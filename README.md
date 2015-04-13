@@ -52,7 +52,7 @@ static async void HelloExpenseReportSample()
 }
 ```
 
-## Web Services Abstracted by ConcurPlatform Library
+## ConcurPlatform Library Services in Details
 
 The following REST web services are abstracted by our ConcurPlatform library:
 
@@ -63,6 +63,25 @@ The following REST web services are abstracted by our ConcurPlatform library:
 3. [Image Services version 1.0](https://developer.concur.com/imaging/image-resource/image-resource-post). Specifically the services for posting an image to a report, posting an image to a report entry, and posting an image to an invoice (also know as *payment request*).
 
 
+
+
+
+
+## License
+
+Copyright 2014 [Concur](http://www.concur.com)
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
 
 
 
@@ -119,25 +138,13 @@ Otherwise, to install Concur Platform using the [NuGet command line tool](https:
 
 NOTE: Navigate to http://www.nuget.org/packages/ConcurPlatform/ if you want to see further information about the ConcurPlatform package.
 
+
+## Web Services Abstracted by ConcurPlatform Library
+
+
 ## --------------------------- END Parking Lot Text ---------------------------------------
 
 
 
 
 
-
-## License
-
-Copyright 2014 [Concur](http://www.concur.com)
-
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
