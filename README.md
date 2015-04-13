@@ -10,7 +10,7 @@ This SDK contains the following:
 
 # Nuget Package
 
-The ConcurPlatform library source code (included in this SDK) is already compiled and uploaded on [http://www.nuget.org/packages/ConcurPlatform](http://www.nuget.org/packages/ConcurPlatform) as a Nuget package named "*ConcurPlatform*".
+The ConcurPlatform library source code (included in this SDK) is already compiled and uploaded on [http://www.nuget.org/packages/ConcurPlatform](http://www.nuget.org/packages/ConcurPlatform) as a Nuget package named "*ConcurPlatform*". **NOTE: this package targets .NET Framework,Version=v4.5 or later, so make sure your project properties target this version of .NET Framework otherwise this package won't be listed in the results when you search for it from inside your IDE. **
 
 
 # Installation
@@ -35,7 +35,7 @@ The ConcurPlatform library requires user credentials in order to make web servic
 
 # Hello Expense Report
 
-If you just want a quick and small sample showing how to start using the ConcurPlatform library then the following code snippet shows how to use it to create an empty expense report named "Hello Expense Report".
+If you just want a quick and small sample showing how to start using the ConcurPlatform library then the following code snippet shows how to create an empty expense report named "Hello Expense Report".
 
 
 
@@ -46,7 +46,7 @@ The following REST web services are abstracted by our ConcurPlatform library:
 
 1. Authentication Services. Specifically, the [Native Flow Token service](https://developer.concur.com/oauth-20/native-flow), the [Refresh Token service](https://developer.concur.com/oauth-20/refreshing-access-tokens), and the [Revoke Token service](https://developer.concur.com/oauth-20/working-access-tokens/revoking-access-tokens).
 
-2. [Concur Platform web services version 3.0](https://www.concursolutions.com/api/docs/index.html).  
+2. [Concur API version 3.0](https://www.concursolutions.com/api/docs/index.html).  
 
 3. [Image Services version 1.0](https://developer.concur.com/imaging/image-resource/image-resource-post). Specifically the services for posting an image to a report, posting an image to a report entry, and posting an image to an invoice (also know as *payment request*).
 
