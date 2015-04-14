@@ -57,7 +57,7 @@ static async void HelloExpenseReportSample()
 
 ### ConcurPlatform Library Interface Pattern
 
-Our ConcurPlatform library interface follows a strict and intuitive pattern and all classes, methods, and paramters have detailed intellisense documentation. Once you see a couple of samples, you should be able to intuitely discover the method or parameter you need to use just by letting intellisense and auto complete-word drive you. 
+Our ConcurPlatform library interface follows a strict and intuitive pattern and all classes, methods, and paramters have detailed intellisense documentation. Once you see a couple of samples, you should be able to intuitively discover the method or parameter you need to use just by letting intellisense and auto complete-word drive you. 
 
 #### Method Name Pattern
 
