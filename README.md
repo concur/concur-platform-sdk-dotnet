@@ -57,18 +57,32 @@ static async void HelloExpenseReportSample()
 
 ### ConcurPlatform Library Interface Pattern
 
-Our ConcurPlatform library interface follows a strict and intuitive pattern. Also, all classes, methods, and paramters have detailed intellisense documentation. Once you see a couple of samples, you should be able to intuitely discover the method or parameter you need to use just by letting intellisense and auto-complete word drive you. 
+Our ConcurPlatform library interface follows a strict and intuitive pattern and all classes, methods, and paramters have detailed intellisense documentation. Once you see a couple of samples, you should be able to intuitely discover the method or parameter you need to use just by letting intellisense and auto complete-word drive you. 
 
-##### Method Name Pattern
+#### Method Name Pattern
 
-All methods in our library start with one of the 4 possible CRUD operation prefix: __Get__, __Create__, __Update__, or __Delete__. For example, 
+All method names in our library follow this formation pattern: **CRUDoperationName** + **ResourceName** + **OptionalByParameterNameDifferentiator** + **OptionalAsyncKeyword**. For example, 
+* Get ExpenseEntries Async 
+* Create ExpenseEntries Async 
+* Update ExpenseEntries ById Async
+* Delete ExpenseEntries ById Async
 
-* **Get**ExpenseEntriesAsync 
-* **Create**ExpenseEntriesAsync 
-* **Update**ExpenseEntriesByIdAsync
-* **Delete**ExpenseEntriesByIdAsync.
 
-After the 
+The *CRUD operation names* used to form the library method names are __Get__, __Create__, __Update__, or __Delete__.
+
+The *resource names* used to form the library method names are the ones commonly used in the Expense and Travel business. For example:
+* Get**ExpenseReports**Async
+* Get**ExpenseEntries**Async  
+* Get**TravelRequests**Async
+* Get **InvoiceVendors**Async
+
+To avoid issues with languages that might not support overloading we rename identical method names by including some of their parameter names, for example:
+* GetExpenseReports**ById**Async(string **id**, ...)
+* DeleteCommonListItems**ByIdByListId**Async(string **id**, string **listId**, ...)
+* DeleteInvoiceVendors**ByVendorCodeByAddressCode**Async(string **addressCode**, string **vendorCode**)
+
+And finally, all asynchronous methods end with the **Async** word. Whereas the synchronous methods don't have that suffix. NOTE: we intend to deprecate the synchronous methods in the near future as they promote bad pratices. The asynchronous methods often yield better performance and better energy efficiency (specially in battery powered devices).
+
 
 #### Services Abstracted by the ConcurPlatform Library
 The following REST web services are abstracted by our ConcurPlatform library:
