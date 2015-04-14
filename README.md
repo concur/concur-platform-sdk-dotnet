@@ -59,7 +59,7 @@ static async void HelloExpenseReportSample()
 
 Our ConcurPlatform library interface follows a strict and intuitive pattern. Also, all classes, methods, and paramters have detailed intellisense documentation. Once you see a couple of samples, you should be able to intuitely discover the method or parameter you need to use just by letting intellisense and auto-complete word drive you. 
 
-#### Method Name Pattern
+##### Method Name Pattern
 
 All methods in our library start with one of the 4 possible CRUD operation prefix: __Get__, __Create__, __Update__, or __Delete__. For example, 
 
