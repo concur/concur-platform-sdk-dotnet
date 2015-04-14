@@ -55,6 +55,18 @@ static async void HelloExpenseReportSample()
 # ConcurPlatform Library in Details
 
 
+#### ConcurPlatform Library Interface Pattern
+
+Our ConcurPlatform library interface follows a strict and intuitive pattern. Also, all classes, methods, and paramters have detailed intellisense documentation. Once you see a couple of samples, you should be able to intuitely discover the method or parameter you need to use just by letting intellisense and auto-complete word drive you. 
+
+All methods in our library start with one of the 4 possible CRUD prefix: __Get__, __Create__, __Update__, or __Delete__. For example, 
+
+* __Get__ExpenseEntriesAsync 
+* __Create__ExpenseEntries 
+* __Update__ExpenseEntriesByIdAsync
+* __Delete__ExpenseEntriesByIdAsync.
+
+
 #### Services Abstracted by the ConcurPlatform Library
 The following REST web services are abstracted by our ConcurPlatform library:
 
