@@ -68,9 +68,9 @@ All method names in our library follow this formation pattern: **CRUDoperationNa
 * Delete ExpenseEntries ById Async
 
 
-The *CRUD operation names* used to form the library method names are __Get__, __Create__, __Update__, or __Delete__.
+The *CRUD operation names* are the well known __Get__, __Create__, __Update__, or __Delete__.
 
-The *resource names* used to form the library method names are the ones commonly used in the Expense and Travel business. For example:
+The *resource names* the well known ones in the Expense and Travel business. For example:
 * Get**ExpenseReports**Async
 * Get**ExpenseEntries**Async  
 * Get**TravelRequests**Async
