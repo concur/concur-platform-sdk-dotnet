@@ -81,7 +81,7 @@ To avoid issues with languages that might not support overloading we rename iden
 * DeleteCommonListItems**ByIdByListId**Async(string **id**, string **listId**, ...)
 * DeleteInvoiceVendors**ByVendorCodeByAddressCode**Async(string **addressCode**, string **vendorCode**)
 
-And finally, all asynchronous methods end with the **Async** word. Whereas the synchronous methods don't have that suffix. NOTE: we intend to deprecate the synchronous methods in the near future as they promote bad pratices. The asynchronous methods often yield better performance and better energy efficiency (specially in battery powered devices).
+And finally, all asynchronous methods end with the **Async** word. Whereas the synchronous methods omit that suffix. NOTE: we intend to deprecate the synchronous methods in the near future as they promote bad pratices. The asynchronous methods often yield better performance and better energy efficiency (specially in battery powered devices).
 
 
 #### Services Abstracted by the ConcurPlatform Library
