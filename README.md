@@ -61,7 +61,7 @@ Our ConcurPlatform library interface follows a strict and intuitive pattern. Als
 
 All methods in our library start with one of the 4 possible CRUD prefix: __Get__, __Create__, __Update__, or __Delete__. For example, 
 
-* *Get*ExpenseEntriesAsync 
+* **Get**ExpenseEntriesAsync 
 * CreateExpenseEntriesAsync 
 * UpdateExpenseEntriesByIdAsync
 * DeleteExpenseEntriesByIdAsync.
