@@ -73,7 +73,7 @@ If you want to see how to obtain OAuth tokens our of a user's loginID and passwo
 All classes in ConcurPlatform library have detailed intellisense documentation. Intellisense makes it trivial to know which class instance is expected as parameter or returned by a method. Therefore, the only 3 class names that you need to know in advance are the "service classes". They aren't referenced by any other class and they represent the Concur web services. They are:
 
 * Concur.Connect.__V3.ConnectService__ - This service class should suffice for virtually everything you need to do. It simply abstracts calls to [Concur API version 3.0](https://www.concursolutions.com/api/docs/index.html) which is where the large majority of our web services reside. 
-* Concur.Connect.__V1.ConnectService__ - This service class is only useful if you need to submit receipts to an expense report, to an expense entry, or to an invoice (A.K.A. payment request). This service class was only incorporated to the ConcurPlatform library because we wanted to isolate in this class any functionality related to the old version 1.0 of Concur web services which were not available yet in version 3.0.
+* Concur.Connect.__V1.ConnectService__ - This service class is only useful if you need to submit receipts [to an expense report](https://developer.concur.com/imaging/image-resource/image-resource-post#postimagetoreport), [to an expense entry](https://developer.concur.com/imaging/image-resource/image-resource-post#postimagetoentry), or [to an invoice](https://developer.concur.com/imaging/image-resource/image-resource-post#postimagetopaymentrequest) (A.K.A. payment request). This service class was only incorporated to the ConcurPlatform library because we wanted to isolate in this class any functionality related to the old version 1.0 of Concur web services which were not available yet in version 3.0.
 * Concur.Authentication.__AuthenticationService__ - This service class is only useful if you need to manage OAuth tokens. It abstracts calls to the [Native Flow Token service](https://developer.concur.com/oauth-20/native-flow), the [Refresh Token service](https://developer.concur.com/oauth-20/refreshing-access-tokens), and the [Revoke Token service](https://developer.concur.com/oauth-20/working-access-tokens/revoking-access-tokens). You shouldn't need to use this service class in scenarios where you already have an OAuth token and you aren't planning to revoke or refresh it.
 
 The [SDK samples](https://github.com/concur/concur-platform-sdk-dotnet/tree/master/sample) exemplifies the usage of the above classes. [Click here](https://github.com/concur/concur-platform-sdk-dotnet/blob/master/sample/_shared/ClientLibraryFacade.cs) to jump directly to a C# file shared by all samples and where all 3 classes above are instantiated and used. Otherwise, see the Hello Expense Report Sample mentioned previously.
@@ -93,40 +93,39 @@ The *CRUD operation names* are the well known __Get__, __Create__, __Update__, a
 The *resource names* are based on usual names for Expense and Travel business. They are the following:
 
 * Concur.Connect.V3.ConnectService Resource Names 
-  * CommonConnectionRequests
-  * CommonListItems
-  * CommonLists
-  * CommonLocations
-  * CommonSuppliers
-  * ExpenseAllocations
-  * ExpenseAttendees
-  * ExpenseeAttendeeTypes
-  * ExpenseDigitalTaxInvoices
-  * ExpenseEntries
-  * ExpenseEntriesAttendeeAssociations
-  * ExpenseExchangeRate
-  * ExpenseGroupConfiguration
-  * ExpenseItemizations
-  * ExpenseReceiptImage
-  * ExpenseReportDigests
-  * ExpenseReports
-  * InsightsLateBookings
-  * InsightsOpportunities
-  * InvoicePurchaseOrder
-  * InvoiceSalesTaxValidationRequest
-  * InvoiceVendors
-  * QuickExpenses
-  * TravelRequests
+  * [CommonConnectionRequests](https://www.concursolutions.com/api/docs/index.html#!/ConnectionRequests)
+  * [CommonListItems](https://www.concursolutions.com/api/docs/index.html#!/ListItems)
+  * [CommonLists](https://www.concursolutions.com/api/docs/index.html#!/Lists)
+  * [CommonLocations](https://www.concursolutions.com/api/docs/index.html#!/Locations)
+  * [CommonSuppliers](https://www.concursolutions.com/api/docs/index.html#!/Suppliers)
+  * [ExpenseAllocations](https://www.concursolutions.com/api/docs/index.html#!/Allocations)
+  * [ExpenseAttendees](https://www.concursolutions.com/api/docs/index.html#!/Attendees)
+  * [ExpenseeAttendeeTypes](https://www.concursolutions.com/api/docs/index.html#!/AttendeeTypes)
+  * [ExpenseDigitalTaxInvoices](https://www.concursolutions.com/api/docs/index.html#!/DigitalTaxInvoices)
+  * [ExpenseEntries](https://www.concursolutions.com/api/docs/index.html#!/Entries)
+  * [ExpenseEntriesAttendeeAssociations](https://www.concursolutions.com/api/docs/index.html#!/EntryAttendeeAssociations)
+  * [ExpenseGroupConfiguration](https://www.concursolutions.com/api/docs/index.html#!/ExpenseGroupConfigurations)
+  * [ExpenseItemizations](https://www.concursolutions.com/api/docs/index.html#!/Itemizations)
+  * [ExpenseReceiptImage](https://www.concursolutions.com/api/docs/index.html#!/ReceiptImages)
+  * [ExpenseReportDigests](https://www.concursolutions.com/api/docs/index.html#!/ReportDigests)
+  * [ExpenseReports](https://www.concursolutions.com/api/docs/index.html#!/Reports)
+  * [InsightsLatestBookings](https://www.concursolutions.com/api/docs/index.html#!/LatestBookings)
+  * [InsightsOpportunities](https://www.concursolutions.com/api/docs/index.html#!/Opportunities)
+  * [InvoicePurchaseOrder](https://www.concursolutions.com/api/docs/index.html#!/PurchaseOrders)
+  * [InvoiceSalesTaxValidationRequest](https://www.concursolutions.com/api/docs/index.html#!/SalesTaxValidationRequest)
+  * [InvoiceVendors](https://www.concursolutions.com/api/docs/index.html#!/Vendors)
+  * [QuickExpenses](https://www.concursolutions.com/api/docs/index.html#!/QuickExpenses)
+  * [TravelRequests](https://www.concursolutions.com/api/docs/index.html#!/Requests)
 * Concur.Connect.V1.ConnectService Resource Names 
-  * ExpenseEntryReceiptImages
-  * ExpenseInvoiceReceiptImages
-  * ExpenseReportReceiptImages
+  * [ExpenseEntryReceiptImages](https://developer.concur.com/imaging/image-resource/image-resource-post#postimagetoentry)
+  * [ExpenseInvoiceReceiptImages](https://developer.concur.com/imaging/image-resource/image-resource-post#postimagetopaymentrequest)
+  * [ExpenseReportReceiptImages](https://developer.concur.com/imaging/image-resource/image-resource-post#postimagetoreport)
 * Concur.Authentication.AuthenticationService Resource Names
-  * OAuthAccessTokens
-  * OAuthTokens
-  * RefreshedOAuthTokens
+  * [OAuthAccessTokens]()
+  * [OAuthTokens]()
+  * [RefreshedOAuthTokens]()
 
-To avoid future issues with languages that might not support overloading we include parameter names in some method names, for example:
+To avoid future issues with methods that might have identical signature we include parameter names in some method names, for example:
 * GetExpenseReports**ById**Async(string **id**, ...)
 * DeleteInvoiceVendors**ByVendorCodeByAddressCode**Async(string **addressCode**, string **vendorCode**)
 
@@ -138,7 +137,7 @@ And finally, all asynchronous methods end with the **Async** word. Whereas the s
 TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO
 
 
-
+TODO put a link for each resource name listed previously
 
 
 
