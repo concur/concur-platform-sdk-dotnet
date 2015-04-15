@@ -64,7 +64,7 @@ If you want to enrich the above sample and make it submit a receipt image to the
     if (receiptImage != null) Console.WriteLine("Successfully submitted a receipt to the report header");
 ```
 
-If you want to see how to create expense entries for a report, how to submit receipt images to expense entries, how to access company configuration, how to determine allowed expense policies, how to determine allowed payment types, or how to determine allowed expense types, please browse our Windows, Android, or iOS [samples](https://github.com/concur/concur-platform-sdk-dotnet/tree/master/sample).
+If you want to see how to obtain OAuth tokens our of a user's loginID and password, how to create expense entries for a report, how to submit receipt images to expense entries, how to access the configuration groups for a company, how to determine the allowed expense policies, how to determine the allowed payment types, or how to determine allowed expense types, please browse our Windows, Android, and iOS [samples](https://github.com/concur/concur-platform-sdk-dotnet/tree/master/sample).
 
 # ConcurPlatform Library in Details
 
@@ -76,7 +76,7 @@ All classes in ConcurPlatform library have detailed intellisense documentation. 
 * Concur.Connect.__V1.ConnectService__ - This service class is only useful if you need to submit receipts to an expense report, to an expense entry, or to an invoice (A.K.A. payment request). This service class was only incorporated to the ConcurPlatform library because we wanted to isolate in this class any functionality related to the old version 1.0 of Concur web services which were not available yet in version 3.0.
 * Concur.Authentication.__AuthenticationService__ - This service class is only useful if you need to manage OAuth tokens. It abstracts calls to the [Native Flow Token service](https://developer.concur.com/oauth-20/native-flow), the [Refresh Token service](https://developer.concur.com/oauth-20/refreshing-access-tokens), and the [Revoke Token service](https://developer.concur.com/oauth-20/working-access-tokens/revoking-access-tokens). You shouldn't need to use this service class in scenarios where you already have an OAuth token and you aren't planning to revoke or refresh it.
 
-The [SDK samples](https://github.com/concur/concur-platform-sdk-dotnet/tree/master/sample) exemplifies the usage of the above classes. [Click here](https://github.com/concur/concur-platform-sdk-dotnet/blob/master/sample/_shared/ClientLibraryFacade.cs) to jump directly to a C# file shared by all samples and where all 3 classes above are instantiated and used. Otherwise, see the [Hello Expense Report Sample](#hello-expense).
+The [SDK samples](https://github.com/concur/concur-platform-sdk-dotnet/tree/master/sample) exemplifies the usage of the above classes. [Click here](https://github.com/concur/concur-platform-sdk-dotnet/blob/master/sample/_shared/ClientLibraryFacade.cs) to jump directly to a C# file shared by all samples and where all 3 classes above are instantiated and used. Otherwise, see the Hello Expense Report Sample mentioned previously.
 
 #### Method Name Pattern
 
@@ -127,7 +127,6 @@ The *resource names* are based on usual names for Expense and Travel business. T
 
 To avoid future issues with languages that might not support overloading we include parameter names in some method names, for example:
 * GetExpenseReports**ById**Async(string **id**, ...)
-* DeleteCommonListItems**ByIdByListId**Async(string **id**, string **listId**, ...)
 * DeleteInvoiceVendors**ByVendorCodeByAddressCode**Async(string **addressCode**, string **vendorCode**)
 
 And finally, all asynchronous methods end with the **Async** word. Whereas the synchronous methods omit that suffix. NOTE: we intend to deprecate the synchronous methods in the near future as they promote bad practices. The asynchronous methods yield better performance and better energy efficiency (specially in battery powered devices.)
