@@ -121,9 +121,7 @@ The *resource names* are based on usual names for Expense and Travel business. T
   * [ExpenseInvoiceReceiptImages](https://developer.concur.com/imaging/image-resource/image-resource-post#postimagetopaymentrequest)
   * [ExpenseReportReceiptImages](https://developer.concur.com/imaging/image-resource/image-resource-post#postimagetoreport)
 * Concur.Authentication.AuthenticationService Resource Names
-  * [OAuthAccessTokens](https://developer.concur.com/oauth-20/working-access-tokens/revoking-access-tokens)
-  * [OAuthTokens](https://developer.concur.com/oauth-20/native-flow)
-  * [RefreshedOAuthTokens](https://developer.concur.com/oauth-20/refreshing-access-tokens)
+  * Authentication service doesn't actually have resources, but it has operations to [get OAuth tokens using native flow](https://developer.concur.com/oauth-20/native-flow), [revoke OAuth tokens](https://developer.concur.com/oauth-20/working-access-tokens/revoking-access-tokens), and [refresh OAuth tokens](https://developer.concur.com/oauth-20/refreshing-access-tokens).
 
 To avoid future issues with methods that might have identical signature we include parameter names in some method names, for example:
 * GetExpenseReports**ById**Async(string **id**, ...)
