@@ -10,7 +10,7 @@ This SDK contains the following:
 
 ## NuGet Package
 
-The ConcurPlatform library source code (included in this SDK) is already compiled and uploaded on [http://www.nuget.org/packages/ConcurPlatform](http://www.nuget.org/packages/ConcurPlatform) as a NuGet package named "*ConcurPlatform*". __NOTE: this package targets .NET Framework version 4.5 or later, so make sure your project properties targets this version of .NET Framework otherwise this package may not be listed in the results when you search for it from inside your development project.__
+The ConcurPlatform library source code (included in this SDK) is already compiled and uploaded on [http://www.nuget.org/packages/ConcurPlatform](http://www.nuget.org/packages/ConcurPlatform) as a NuGet package named "*ConcurPlatform*". __NOTE: this package targets .NET Framework version 4.5 or later, so make sure your project properties target this version of .NET Framework otherwise this package may not be listed in the results when you search for it from inside your development project.__
 
 
 ## Installation
@@ -64,7 +64,7 @@ If you want to enrich the above sample and make it submit a receipt image to the
     if (receiptImage != null) Console.WriteLine("Successfully submitted a receipt to the report header");
 ```
 
-If you want to see how to obtain OAuth tokens our of a user's loginID and password, how to create expense entries for a report, how to submit receipt images to expense entries, how to access the configuration groups for a company, how to determine the allowed expense policies, how to determine the allowed payment types, or how to determine allowed expense types, please browse our Windows, Android, and iOS [samples](https://github.com/concur/concur-platform-sdk-dotnet/tree/master/sample).
+If you want to see how to obtain OAuth tokens from a user's loginID and password, how to create expense entries for a report, how to submit receipt images to expense entries, how to obtain the configuration groups for a company, how to determine the allowed expense policies, how to determine the allowed payment types, or how to determine allowed expense types, please browse our Windows, Android, and iOS [samples](https://github.com/concur/concur-platform-sdk-dotnet/tree/master/sample).
 
 # ConcurPlatform Library in Details
 
@@ -121,9 +121,9 @@ The *resource names* are based on usual names for Expense and Travel business. T
   * [ExpenseInvoiceReceiptImages](https://developer.concur.com/imaging/image-resource/image-resource-post#postimagetopaymentrequest)
   * [ExpenseReportReceiptImages](https://developer.concur.com/imaging/image-resource/image-resource-post#postimagetoreport)
 * Concur.Authentication.AuthenticationService Resource Names
-  * [OAuthAccessTokens]()
-  * [OAuthTokens]()
-  * [RefreshedOAuthTokens]()
+  * [OAuthAccessTokens](https://developer.concur.com/oauth-20/working-access-tokens/revoking-access-tokens)
+  * [OAuthTokens](https://developer.concur.com/oauth-20/native-flow)
+  * [RefreshedOAuthTokens](https://developer.concur.com/oauth-20/refreshing-access-tokens)
 
 To avoid future issues with methods that might have identical signature we include parameter names in some method names, for example:
 * GetExpenseReports**ById**Async(string **id**, ...)
