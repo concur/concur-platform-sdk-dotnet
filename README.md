@@ -36,22 +36,35 @@ The ConcurPlatform library requires user credentials (e.g. OAuth access token) i
 
 ## Hello Expense Report Sample
 
-If you just want to see a small C# sample of how to use the ConcurPlatform library then the following code snippet shows how to create an empty expense report named "Hello Expense Report".
+If you just want to see a small C# sample of how to use the ConcurPlatform library then the following code sample shows how to create an empty expense report named "Hello Expense Report".
 
 ```C#
+using Concur.Util;
 using Concur.Connect.V3;
 using Concur.Connect.V3.Serializable;
 . . .
-static async void HelloExpenseReportSample() 
-{
-    var concur = new ConnectService(accessToken: __ProvideHereYourOAuthAccessToken__ );
-    var report = await concur.CreateExpenseReportsAsync( 
+    static async void HelloExpenseReportSample()
+    {
+      var serviceV3 = new Concur.Connect.V3.ConnectService( __ProvideHereYourOAuthAccessToken__ );
+      var report = await serviceV3.CreateExpenseReportsAsync(
         new ReportPost() { Name = "Hello Expense Report" }
-    );
-    Console.WriteLine("Succefully created a report with ID = " + report.ID);
-}
+      );
+      Console.WriteLine("Successfully created a report with ID = " + report.ID);
+
+      /*** Paste here the code to submit a receipt to the report header ***/
+    }
 ```
 
+If you want to enrich the above sample and make it submit a receipt image to the report header then copy and paste the code snippet displayed below to the bottom of the above sample. 
+
+```C#
+      var serviceV1 = new Concur.Connect.V1.ConnectService( __ProvideHereYourOAuthAccessToken__ );
+      byte[] expenseImageData = new System.Net.WebClient().DownloadData("https://raw.githubusercontent.com/concur/concur-platform-sdk-dotnet/master/sample/_shared/TestReceipt.jpg");
+      var receiptImage = await serviceV1.CreateExpenseReportReceiptImagesAsync(expenseImageData, ReceiptFileType.Jpeg, report.ID);
+      if (receiptImage != null) Console.WriteLine("Successfully submitted a receipt to the report header");
+```
+
+If you want to see how to create expense entries for a report, how to submit receipt images to expense entries, how to access company configuration, how to determine allowed expense policies, how to determine allowed payment types, or how to determine allowed expense types, please browse our Windows, Android, or iOS [samples](https://github.com/concur/concur-platform-sdk-dotnet/tree/master/sample).
 
 # ConcurPlatform Library in Details
 
@@ -63,7 +76,7 @@ All classes in ConcurPlatform library have detailed intellisense documentation. 
 * Concur.Connect.__V1.ConnectService__ - This service class is only useful if you need to submit receipts to an expense report, to an expense entry, or to an invoice (A.K.A. payment request). This service class was only incorporated to the ConcurPlatform library because we wanted to isolate in this class any functionality related to the old version 1.0 of Concur web services which were not available yet in version 3.0.
 * Concur.Authentication.__AuthenticationService__ - This service class is only useful if you need to manage OAuth tokens. It abstracts calls to the [Native Flow Token service](https://developer.concur.com/oauth-20/native-flow), the [Refresh Token service](https://developer.concur.com/oauth-20/refreshing-access-tokens), and the [Revoke Token service](https://developer.concur.com/oauth-20/working-access-tokens/revoking-access-tokens). You shouldn't need to use this service class in scenarios where you already have an OAuth token and you aren't planning to revoke or refresh it.
 
-The [SDK samples](https://github.com/concur/concur-platform-sdk-dotnet/tree/master/sample) exemplifies the usage of the above classes. [Click here](https://github.com/concur/concur-platform-sdk-dotnet/blob/master/sample/_shared/ClientLibraryFacade.cs) to jump directly to a C# file shared by all samples and where all 3 classes above are instantiated and used. Otherwise, see the [Hello Expense Report Sample](#Hello-Expense-Report-Sample).
+The [SDK samples](https://github.com/concur/concur-platform-sdk-dotnet/tree/master/sample) exemplifies the usage of the above classes. [Click here](https://github.com/concur/concur-platform-sdk-dotnet/blob/master/sample/_shared/ClientLibraryFacade.cs) to jump directly to a C# file shared by all samples and where all 3 classes above are instantiated and used. Otherwise, see the [Hello Expense Report Sample](#hello expense).
 
 #### Method Name Pattern
 
