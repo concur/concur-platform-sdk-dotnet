@@ -34,7 +34,7 @@ The samples provided in this SDK reference our NuGet package. Depending on how y
 The ConcurPlatform library requires user credentials (e.g. OAuth access token) in order to make web services calls on the behalf of a user. If you want, you can obtain user credentials to a brand new sandbox company at Concur by [following the sandbox registration process described here](https://developer.concur.com/register).  
 
 
-## Hello Expense Report Sample
+##Hello Expense Report Sample
 
 If you just want to see a small C# sample of how to use the ConcurPlatform library then the following code sample shows how to create an empty expense report named "Hello Expense Report".
 
