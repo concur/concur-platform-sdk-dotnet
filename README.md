@@ -43,25 +43,25 @@ using Concur.Util;
 using Concur.Connect.V3;
 using Concur.Connect.V3.Serializable;
 . . .
-    static async void HelloExpenseReportSample()
-    {
-      var serviceV3 = new Concur.Connect.V3.ConnectService( __ProvideHereYourOAuthAccessToken__ );
-      var report = await serviceV3.CreateExpenseReportsAsync(
+static async void HelloExpenseReportSample()
+{
+    var serviceV3 = new Concur.Connect.V3.ConnectService( __ProvideHereYourOAuthAccessToken__ );
+    var report = await serviceV3.CreateExpenseReportsAsync(
         new ReportPost() { Name = "Hello Expense Report" }
-      );
-      Console.WriteLine("Successfully created a report with ID = " + report.ID);
+    );
+    Console.WriteLine("Successfully created a report with ID = " + report.ID);
 
-      /*** Paste here the code to submit a receipt to the report header ***/
-    }
+    /*** Paste here the code to submit a receipt to the report header ***/
+}
 ```
 
 If you want to enrich the above sample and make it submit a receipt image to the report header then copy and paste the code snippet displayed below to the bottom of the above sample. 
 
 ```C#
-      var serviceV1 = new Concur.Connect.V1.ConnectService( __ProvideHereYourOAuthAccessToken__ );
-      byte[] expenseImageData = new System.Net.WebClient().DownloadData("https://raw.githubusercontent.com/concur/concur-platform-sdk-dotnet/master/sample/_shared/TestReceipt.jpg");
-      var receiptImage = await serviceV1.CreateExpenseReportReceiptImagesAsync(expenseImageData, ReceiptFileType.Jpeg, report.ID);
-      if (receiptImage != null) Console.WriteLine("Successfully submitted a receipt to the report header");
+    var serviceV1 = new Concur.Connect.V1.ConnectService( __ProvideHereYourOAuthAccessToken__ );
+    byte[] expenseImageData = new System.Net.WebClient().DownloadData("https://raw.githubusercontent.com/concur/concur-platform-sdk-dotnet/master/sample/_shared/TestReceipt.jpg");
+    var receiptImage = await serviceV1.CreateExpenseReportReceiptImagesAsync(expenseImageData, ReceiptFileType.Jpeg, report.ID);
+    if (receiptImage != null) Console.WriteLine("Successfully submitted a receipt to the report header");
 ```
 
 If you want to see how to create expense entries for a report, how to submit receipt images to expense entries, how to access company configuration, how to determine allowed expense policies, how to determine allowed payment types, or how to determine allowed expense types, please browse our Windows, Android, or iOS [samples](https://github.com/concur/concur-platform-sdk-dotnet/tree/master/sample).
