@@ -29,14 +29,14 @@ To reference our NuGet package from any Xamarin project, [follow the instruction
 The samples provided in this SDK reference our NuGet package. Depending on how you choose to compile the samples (Xamarin versus Visual Studio, IDE version, build versus rebuild, etc.) the compilation may fail because it may not succeed to resolve the reference to our NuGet package. If you get an error when trying to compile the samples, simply reference again the NuGet package as explained in the above sections.
 
 
-## User Credentials
+## User Credentials and Sandbox Company
 
 The ConcurPlatform library requires user credentials (e.g. OAuth access token) in order to make web services calls on the behalf of a user. If you want, you can obtain user credentials to a brand new sandbox company at Concur by [following the sandbox registration process described here](https://developer.concur.com/register).  
 
 
 ## Hello Expense Report Sample
 
-If you just want to see a quick and small sample of how to use the ConcurPlatform library then the following code snippet shows how to create an empty expense report named "Hello Expense Report".
+If you just want to see a small C# sample of how to use the ConcurPlatform library then the following code snippet shows how to create an empty expense report named "Hello Expense Report".
 
 ```C#
 using Concur.Connect.V3;
@@ -52,46 +52,79 @@ static async void HelloExpenseReportSample()
 }
 ```
 
+
 # ConcurPlatform Library in Details
 
+### Classes
 
-### ConcurPlatform Library Interface Pattern
+All classes in ConcurPlatform library have detailed intellisense documentation. Intellisense makes it trivial to know which class instance is expected as parameter or returned by a method. Therefore, the only 3 class names that you need to know in advance are the "service classes". They aren't referenced by any other class and they represent the Concur web services. They are:
 
-Our ConcurPlatform library interface follows a strict and intuitive pattern and all classes, methods, and paramters have detailed intellisense documentation. Once you see a couple of samples, you should be able to intuitively discover the method or parameter you need to use just by letting intellisense and auto complete-word drive you. 
+* Concur.Connect.V3.ConnectService - This service class should suffice for virtually everything you need to do. It simply abstracts calls to [Concur API version 3.0](https://www.concursolutions.com/api/docs/index.html) which is where the large majority of our web services reside. 
+* Concur.Connect.V1.ConnectService - This service class is only useful if you need to submit receipts to an expense report, to an expense entry, or to an invoice (A.K.A. payment request). This service class was only incorporated to the ConcurPlatform library because we wanted to isolate in this class any functionality related to the old version 1.0 of Concur web services, not available yet in version 3.0.
+* Concur.Authentication.AuthenticationService - This service class is only useful if you need to manage OAuth tokens. It abstracts calls to the [Native Flow Token service](https://developer.concur.com/oauth-20/native-flow), the [Refresh Token service](https://developer.concur.com/oauth-20/refreshing-access-tokens), and the [Revoke Token service](https://developer.concur.com/oauth-20/working-access-tokens/revoking-access-tokens). You shouldn't need to use this service class in scenarios where you already have an OAuth token and you aren't planning to revoke or refresh it.
+
+The [SDK samples](https://github.com/concur/concur-platform-sdk-dotnet/tree/master/sample) exemplifies the usage of the above classes. [Click here](https://github.com/concur/concur-platform-sdk-dotnet/blob/master/sample/_shared/ClientLibraryFacade.cs) to jump directly to a C# file shared by all samples and where all 3 classes above are instantiated and used. Otherwise, see the [Hello Expense Report Sample](#Hello-Expense-Report-Sample).
 
 #### Method Name Pattern
 
-All method names in our library follow this formation pattern: **CRUDoperationName** + **ResourceName** + **OptionalByParameterNameDifferentiator** + **OptionalAsyncKeyword**. For example, 
+All methods in ConcurPlatform libary follow a naming convention pattern and they all have detailed intellisense documentation. Once you see a couple of samples, you should be able to intuitively discover the method or parameter you need to use just by letting auto complete-word and intellisense drive you. 
+
+All methods in our library follow this naming formation pattern: **CRUD operation name** + **resource name** + **optional parameter name differentiator** + **optional async keyword**. For example: 
 * Get ExpenseEntries Async 
 * Create ExpenseEntries Async 
 * Update ExpenseEntries ById Async
 * Delete ExpenseEntries ById Async
 
+The *CRUD operation names* are the well known __Get__, __Create__, __Update__, and __Delete__. So if you need to get a resource you type __Get__ and intellisense will show you all resources available for this operation, the same applies if you need to Create, Update or Delete, simply type the operation name and let intellisense tell you which resources supports that operation. Unfortunately not all resources support already all 4 operations. NOTE: AuthenticationService also supports __Revoke__ as an exceptional operation name and that can also be noticed using auto complete-word and intellisense. 
 
-The *CRUD operation names* are the well known __Get__, __Create__, __Update__, or __Delete__.
+The *resource names* are based on usual names for Expense and Travel business. They are the following:
 
-The *resource names* the well known ones in the Expense and Travel business. For example:
-* Get**ExpenseReports**Async
-* Get**ExpenseEntries**Async  
-* Get**TravelRequests**Async
-* Get **InvoiceVendors**Async
+* CommonConnectionRequests
+* CommonListItems
+* CommonLists
+* CommonLocations
+* CommonSuppliers
+* ExpenseAllocations
+* ExpenseAttendees
+* ExpenseeAttendeeTypes
+* ExpenseDigitalTaxInvoices
+* ExpenseEntries
+* ExpenseEntriesAttendeeAssociations
+* ExpenseExchangeRate
+* ExpenseGroupConfiguration
+* ExpenseItemizations
+* ExpenseReceiptImage
+* ExpenseReportDigests
+* ExpenseReports
+* InsightsLateBookings
+* InsightsOpportunities
+* InvoicePurchaseOrder
+* InvoiceSalesTaxValidationRequest
+* InvoiceVendors
+* QuickExpenses
+* TravelRequests
 
-To avoid issues with languages that might not support overloading we rename identical method names by including some of their parameter names, for example:
+* ExpenseEntryReceiptImages
+* ExpenseInvoiceReceiptImages
+* ExpenseReportReceiptImages
+
+* OAuthAccessTokens
+* OAuthTokens
+* RefreshedOAuthTokens
+
+To avoid future issues with languages that might not support overloading we include parameter names in some method names, for example:
 * GetExpenseReports**ById**Async(string **id**, ...)
 * DeleteCommonListItems**ByIdByListId**Async(string **id**, string **listId**, ...)
 * DeleteInvoiceVendors**ByVendorCodeByAddressCode**Async(string **addressCode**, string **vendorCode**)
 
-And finally, all asynchronous methods end with the **Async** word. Whereas the synchronous methods omit that suffix. NOTE: we intend to deprecate the synchronous methods in the near future as they promote bad pratices. The asynchronous methods often yield better performance and better energy efficiency (specially in battery powered devices).
+And finally, all asynchronous methods end with the **Async** word. Whereas the synchronous methods omit that suffix. NOTE: we intend to deprecate the synchronous methods in the near future as they promote bad practices. The asynchronous methods yield better performance and better energy efficiency (specially in battery powered devices.)
 
 
-#### Services Abstracted by the ConcurPlatform Library
-The following REST web services are abstracted by our ConcurPlatform library:
+#### Pagination Pattern
 
-1. Authentication Services. Specifically, the [Native Flow Token service](https://developer.concur.com/oauth-20/native-flow), the [Refresh Token service](https://developer.concur.com/oauth-20/refreshing-access-tokens), and the [Revoke Token service](https://developer.concur.com/oauth-20/working-access-tokens/revoking-access-tokens).
+TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO
 
-2. [Concur API version 3.0](https://www.concursolutions.com/api/docs/index.html).  
 
-3. [Image Services version 1.0](https://developer.concur.com/imaging/image-resource/image-resource-post). Specifically the services for posting an image to a report, posting an image to a report entry, and posting an image to an invoice (also know as *payment request*).
 
 
 
@@ -121,6 +154,20 @@ limitations under the License.
 
 
 ## --------------------------- BEGIN Parking Lot Text ---------------------------------------
+
+
+
+#### Services Abstracted by the ConcurPlatform Library
+The following REST web services are abstracted by our ConcurPlatform library:
+
+1. Authentication Services. Specifically, the [Native Flow Token service](https://developer.concur.com/oauth-20/native-flow), the [Refresh Token service](https://developer.concur.com/oauth-20/refreshing-access-tokens), and the [Revoke Token service](https://developer.concur.com/oauth-20/working-access-tokens/revoking-access-tokens).
+
+2. [Concur API version 3.0](https://www.concursolutions.com/api/docs/index.html).  
+
+3. [Image Services version 1.0](https://developer.concur.com/imaging/image-resource/image-resource-post). Specifically the services for posting an image to a report, posting an image to a report entry, and posting an image to an invoice (also know as *payment request*).
+
+
+
 
 http://xamarin.com/faq
 Xamarin faq about not being able to work with non-express edition.
