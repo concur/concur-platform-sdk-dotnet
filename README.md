@@ -92,6 +92,7 @@ The *CRUD operation names* are the well known __Get__, __Create__, __Update__, a
 
 The *resource names* are based on usual names for Expense and Travel business. They are the following:
 
+* -------- Concur.Connect.V3.ConnectService Resource Names -------- 
 * CommonConnectionRequests
 * CommonListItems
 * CommonLists
@@ -116,11 +117,11 @@ The *resource names* are based on usual names for Expense and Travel business. T
 * InvoiceVendors
 * QuickExpenses
 * TravelRequests
-* --------------------------
+* -------- Concur.Connect.V1.ConnectService Resource Names -------- 
 * ExpenseEntryReceiptImages
 * ExpenseInvoiceReceiptImages
 * ExpenseReportReceiptImages
-* --------------------------
+* -------- Concur.Authentication.AuthenticationService Resource Names -------- 
 * OAuthAccessTokens
 * OAuthTokens
 * RefreshedOAuthTokens
