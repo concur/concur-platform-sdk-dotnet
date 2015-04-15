@@ -67,7 +67,7 @@ The [SDK samples](https://github.com/concur/concur-platform-sdk-dotnet/tree/mast
 
 #### Method Name Pattern
 
-All methods in ConcurPlatform libary follow a naming convention pattern and they all have detailed intellisense documentation. Once you see a couple of samples, you should be able to intuitively discover the method or parameter you need to use just by letting auto complete-word and intellisense drive you. 
+All methods in ConcurPlatform libary follow a naming pattern and they all have detailed intellisense documentation. Once you see a couple of samples, you should be able to intuitively discover the method or parameter you need to use just by letting auto complete-word and intellisense drive you. 
 
 All methods in our library follow this naming formation pattern: **CRUD operation name** + **resource name** + **optional parameter name differentiator** + **optional async keyword**. For example: 
 * Get ExpenseEntries Async 
@@ -75,7 +75,7 @@ All methods in our library follow this naming formation pattern: **CRUD operatio
 * Update ExpenseEntries ById Async
 * Delete ExpenseEntries ById Async
 
-The *CRUD operation names* are the well known __Get__, __Create__, __Update__, and __Delete__. So if you need to get a resource you type __Get__ and intellisense will show you all resources available for this operation, the same applies if you need to Create, Update or Delete, simply type the operation name and let intellisense tell you which resources supports that operation. Unfortunately not all resources support already all 4 operations. NOTE: AuthenticationService also supports __Revoke__ as an exceptional operation name and that can also be noticed using auto complete-word and intellisense. 
+The *CRUD operation names* are the well known __Get__, __Create__, __Update__, and __Delete__. So if you need to get a resource you type __Get__ and intellisense will show you all resources available for that operation. The same applies if you need to Create, Update or Delete, simply type the operation name and let intellisense tell you which resources supports that operation. Unfortunately not all resources support already all 4 operations. NOTE: AuthenticationService also supports __Revoke__ as an exceptional operation name and that can also be noticed using intellisense. 
 
 The *resource names* are based on usual names for Expense and Travel business. They are the following:
 
@@ -103,11 +103,11 @@ The *resource names* are based on usual names for Expense and Travel business. T
 * InvoiceVendors
 * QuickExpenses
 * TravelRequests
-
+* --------------------------
 * ExpenseEntryReceiptImages
 * ExpenseInvoiceReceiptImages
 * ExpenseReportReceiptImages
-
+* --------------------------
 * OAuthAccessTokens
 * OAuthTokens
 * RefreshedOAuthTokens
