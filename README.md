@@ -70,7 +70,10 @@ If you want to enrich the above sample and make it submit a receipt image to the
 In case you are wondering how to obtain the OAuth access token from the user's loginID (e.g. smith@TheCompany.com) and password then the sample below exemplifies it. Notice that the "oauthAppClientID" parameter is the unique ID (known as client ID or consumer key) that identifies applications in the [OAuth protocol](https://tools.ietf.org/html/rfc6749). 
 
 ```C#
-static async Task<string> GetOAuthTokenFromLoginPassword(string loginID, string password, string oauthAppClientID)
+static async Task<string> GetOAuthTokenFromLoginPassword(
+    string loginID, 
+    string password, 
+    string oauthAppClientID)
 {
     var authService = new Concur.Authentication.AuthenticationService();
     var oauthDetail = await authService.GetOAuthTokenAsync(
