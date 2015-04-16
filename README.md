@@ -144,9 +144,7 @@ The *resource names* are based on usual names for Expense and Travel business. T
 * Concur.Authentication.AuthenticationService Resource Names
   * Authentication service doesn't actually have resources, but it has operations to [get OAuth tokens](https://developer.concur.com/oauth-20/native-flow) using native flow, [refresh OAuth tokens](https://developer.concur.com/oauth-20/refreshing-access-tokens), and [revoke OAuth tokens](https://developer.concur.com/oauth-20/working-access-tokens/revoking-access-tokens).
 
-To avoid future issues with methods that might have identical signature we include parameter names in some method names, for example:
-* GetExpenseReports**ById**Async(string **id**, ...)
-* DeleteInvoiceVendors**ByVendorCodeByAddressCode**Async(string **addressCode**, string **vendorCode**)
+To avoid future issues with methods that might have identical signature we include parameter names in some method names, for example, GetExpenseReports**ById**Async( string **id**, ...)
 
 And finally, all asynchronous methods end with the **Async** word. Whereas the synchronous methods omit that suffix. NOTE: we intend to deprecate the synchronous methods in the near future as they promote bad practices. The asynchronous methods yield better performance and better energy efficiency (specially in battery powered devices.)
 
