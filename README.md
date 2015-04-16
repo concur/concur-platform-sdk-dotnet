@@ -85,7 +85,7 @@ static async Task<string> GetOAuthTokenFromLoginPassword(
 }
 ```
 
-Please browse our Windows, Android, and iOS [samples](https://github.com/concur/concur-platform-sdk-dotnet/tree/master/sample) if you want to see to see sample code of how to obtain OAuth tokens from a user's loginID and password, how to create expense entries for a report, how to submit receipt images to expense entries, how to obtain the configuration groups for a company, how to determine the allowed expense policies, how to determine the allowed payment types, how to determine allowed expense types, and more.
+Please browse our Windows, Android, and iOS [samples](https://github.com/concur/concur-platform-sdk-dotnet/tree/master/sample) if you want to see sample code of how to create expense entries for a report, how to submit receipt images to expense entries, how to obtain the configuration groups for a company, how to determine the allowed expense policies, how to determine the allowed payment types, how to determine allowed expense types, and more.
 
 # ConcurPlatform Library in Details
 
