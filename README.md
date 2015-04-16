@@ -58,13 +58,13 @@ static async Task HelloExpenseReportSample(string oauthAccessToken)
 If you want to enrich the above sample and make it submit a receipt image to the report header then copy and paste the code snippet displayed below to the bottom of the above sample. 
 
 ```C#
-var serviceV1 = new Concur.Connect.V1.ConnectService(oauthAccessToken);
-byte[] expenseImageData = new System.Net.WebClient().DownloadData("https://raw.githubusercontent.com/concur/concur-platform-sdk-dotnet/master/sample/_shared/TestReceipt.jpg");
-var receiptImage = await serviceV1.CreateExpenseReportReceiptImagesAsync(
-    expenseImageData, 
-    ReceiptFileType.Jpeg, 
-    report.ID
-);
+    var serviceV1 = new Concur.Connect.V1.ConnectService(oauthAccessToken);
+    byte[] expenseImageData = new System.Net.WebClient().DownloadData("https://raw.githubusercontent.com/concur/concur-platform-sdk-dotnet/master/sample/_shared/TestReceipt.jpg");
+    var receiptImage = await serviceV1.CreateExpenseReportReceiptImagesAsync(
+        expenseImageData, 
+        ReceiptFileType.Jpeg, 
+        report.ID
+    );
 ```
 
 In case you are wondering how to obtain the OAuth access token from the user's loginID (e.g. smith@TheCompany.com) and password then the sample below exemplifies it. Notice that the "oauthAppClientID" parameter is the unique ID (known as client ID or consumer key) that identifies applications in the [OAuth protocol](https://tools.ietf.org/html/rfc6749). 
