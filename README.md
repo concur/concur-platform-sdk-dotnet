@@ -45,13 +45,13 @@ using Concur.Connect.V3.Serializable;
 . . .
 static async Task HelloExpenseReportSample(string oauthAccessToken)
 {
-  var serviceV3 = new Concur.Connect.V3.ConnectService(oauthAccessToken);
-  var report = await serviceV3.CreateExpenseReportsAsync(
-    new ReportPost() { Name = "Hello Expense Report" }
-  );
-  Console.WriteLine("Successfully created a report with ID = " + report.ID);
+    var serviceV3 = new Concur.Connect.V3.ConnectService(oauthAccessToken);
+    var report = await serviceV3.CreateExpenseReportsAsync(
+        new ReportPost() { Name = "Hello Expense Report" }
+    );
+    Console.WriteLine("Successfully created a report with ID = " + report.ID);
 
-  /*** Paste here the code to submit a receipt to the report header ***/
+    /*** Paste here the code to submit a receipt to the report header ***/
 }
 ```
 
@@ -60,8 +60,11 @@ If you want to enrich the above sample and make it submit a receipt image to the
 ```C#
 var serviceV1 = new Concur.Connect.V1.ConnectService(oauthAccessToken);
 byte[] expenseImageData = new System.Net.WebClient().DownloadData("https://raw.githubusercontent.com/concur/concur-platform-sdk-dotnet/master/sample/_shared/TestReceipt.jpg");
-var receiptImage = await serviceV1.CreateExpenseReportReceiptImagesAsync(expenseImageData, ReceiptFileType.Jpeg, report.ID);
-if (receiptImage != null) Console.WriteLine("Successfully submitted a receipt to the report header");
+var receiptImage = await serviceV1.CreateExpenseReportReceiptImagesAsync(
+    expenseImageData, 
+    ReceiptFileType.Jpeg, 
+    report.ID
+);
 ```
 
 In case you are wondering how to obtain the OAuth access token from the user's loginID (e.g. smith@TheCompany.com) and password then the sample below exemplifies it. Notice that the "oauthAppClientID" parameter is the unique ID (known as client ID or consumer key) that identifies applications in the [OAuth protocol](https://tools.ietf.org/html/rfc6749). 
@@ -69,10 +72,14 @@ In case you are wondering how to obtain the OAuth access token from the user's l
 ```C#
 static async Task<string> GetOAuthTokenFromLoginPassword(string loginID, string password, string oauthAppClientID)
 {
-  var authService = new Concur.Authentication.AuthenticationService();
-  var oauthDetail = await authService.GetOAuthTokenAsync(loginID, password, oauthAppClientID);
-  var yourOAuthAccessToken = oauthDetail.AccessToken;
-  return yourOAuthAccessToken;
+    var authService = new Concur.Authentication.AuthenticationService();
+    var oauthDetail = await authService.GetOAuthTokenAsync(
+        loginID, 
+        password, 
+        oauthAppClientID
+    );
+    var yourOAuthAccessToken = oauthDetail.AccessToken;
+    return yourOAuthAccessToken;
 }
 ```
 
@@ -151,26 +158,27 @@ The sample below exemplifies how to paginate through expense reports.
 ```C#
 static async Task PaginateThruExpenseReports(string oauthAccessToken)
 {
-  var serviceV3 = new Concur.Connect.V3.ConnectService(oauthAccessToken);
-  string nextPageOffset = null;
-  bool isEndOfPagination = false;
-  do
-  {
-    Console.WriteLine("********** begin new page **********");
-    var page = await serviceV3.GetExpenseReportsAsync(limit: 3, offset: nextPageOffset);
-    foreach (var report in page.Items) Console.WriteLine(
-      "REPORT ID: '{0}'  ,  NAME: '{1}'",
-      report.ID,
-      report.Name
-    );
-    nextPageOffset = page.NextPageOffset();
-    isEndOfPagination = page.IsEndOfPagination();
-  }
-  while (!isEndOfPagination);
-  Console.WriteLine("********** end of pages **********");
+    var serviceV3 = new Concur.Connect.V3.ConnectService(oauthAccessToken);
+    string nextPageOffset = null;
+    bool isEndOfPagination = false;
+    do
+    {
+        Console.WriteLine("********** begin new page **********");
+        var page = await serviceV3.GetExpenseReportsAsync(
+            limit: 3, 
+            offset: nextPageOffset);
+        foreach (var report in page.Items) Console.WriteLine(
+            "REPORT ID: '{0}'  ,  NAME: '{1}'",
+            report.ID,
+            report.Name
+        );
+        nextPageOffset = page.NextPageOffset();
+        isEndOfPagination = page.IsEndOfPagination();
+    }
+    while (!isEndOfPagination);
+    Console.WriteLine("********** end of pages **********");
 }
 ```
-
 
 ## License
 
@@ -187,83 +195,4 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
-
-
-
-
-
-
-
-## --------------------------- BEGIN Parking Lot Text ---------------------------------------
-
-
-
-#### Services Abstracted by the ConcurPlatform Library
-The following REST web services are abstracted by our ConcurPlatform library:
-
-1. Authentication Services. Specifically, the [Native Flow Token service](https://developer.concur.com/oauth-20/native-flow), the [Refresh Token service](https://developer.concur.com/oauth-20/refreshing-access-tokens), and the [Revoke Token service](https://developer.concur.com/oauth-20/working-access-tokens/revoking-access-tokens).
-
-2. [Concur API version 3.0](https://www.concursolutions.com/api/docs/index.html).  
-
-3. [Image Services version 1.0](https://developer.concur.com/imaging/image-resource/image-resource-post). Specifically the services for posting an image to a report, posting an image to a report entry, and posting an image to an invoice (also know as *payment request*).
-
-
-
-
-http://xamarin.com/faq
-Xamarin faq about not being able to work with non-express edition.
- 
-The Client Library comprises:
-API Version 3.0   https://www.concursolutions.com/api/docs/index.html#!/DigitalTaxInvoices
-Authentication services https://developer.concur.com/oauth-20/working-access-tokens
-Some API from Version 1.0 regarding imaging https://developer.concur.com/api-documentation/web-services/imaging/image-resource/image-resource-post
- 
-Async pattern support in the latest .NET 4.5.*(C# 5.0).
- 
-We recommend the use of Async methods for everything. We intend to remove the synchronous method in the future. Async saves energy (battery) and it is the recommended way for all Mobile or Server-scalable applications.
- 
-This share has the whole solution \\990-02785\SheldonShare
- 
- 
-Client Library at GitHub:  https://github.com/concur/concur-platform-sdk-dotnet
- 
-NuGet package:  http://www.nuget.org/packages/ConcurPlatform/ 
- 
------------------------------------------------------------------------------------------------------------------------------------
-
-abstracting calls for the following web services in the concur platform:
-
-SDK for the [Concur Platform](http://developer.concur.com). For more information on the set of platform services, see the [Web services overview](https://developer.concur.com/get-started/webservices-overview) document on the developer portal.
-Register for a [developer Sandbox here](https://developer.concur.com/register).
-
-
-To reference the 
-
-The source code contained in this repository is self-contained and it doesn't have external references.
-
-## User Credentials
-
-The portable library requires user credentials in order to make web services calls on the behalf of a user. If you want, you can obtain user credentials to a brand new sandbox company at Concur by [following the sandbox registration process described here](https://developer.concur.com/register).  
-
-You need user credentials in order to call 
-
-To install Concur Platform from inside the [Package Manager Console](http://docs.nuget.org/docs/start-here/using-the-package-manager-console), run the following command:
-
-    Install-Package ConcurPlatform
-
-Otherwise, to install Concur Platform using the [NuGet command line tool](https://docs.nuget.org/consume/command-line-reference), run the following command:
-
-    nuget install ConcurPlatform
-
-NOTE: Navigate to http://www.nuget.org/packages/ConcurPlatform/ if you want to see further information about the ConcurPlatform package.
-
-
-## Web Services Abstracted by ConcurPlatform Library
-
-
-## --------------------------- END Parking Lot Text ---------------------------------------
-
-
-
-
 
