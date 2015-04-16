@@ -13,7 +13,7 @@ This SDK contains the following:
 The ConcurPlatform library source code (included in this SDK) is already compiled and uploaded on [http://www.nuget.org/packages/ConcurPlatform](http://www.nuget.org/packages/ConcurPlatform) as a NuGet package named "*ConcurPlatform*". __NOTE: this package targets .NET Framework version 4.5 or later, so make sure your project properties target this version of .NET Framework otherwise this package may not be listed in the results when you search for it from inside your development project.__
 
 
-- [Hello Expense](#Hello-Expense-Report-Sample)
+- [Hello Expense](https://github.com/concur/concur-platform-sdk-dotnet/tree/readmeDocs#hello-expense-report-sample)
 
 ## Installation
 
