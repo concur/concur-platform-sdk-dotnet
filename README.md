@@ -12,9 +12,6 @@ This SDK contains the following:
 
 The ConcurPlatform library source code (included in this SDK) is already compiled and uploaded on [http://www.nuget.org/packages/ConcurPlatform](http://www.nuget.org/packages/ConcurPlatform) as a NuGet package named "*ConcurPlatform*". __NOTE: this package targets .NET Framework version 4.5 or later, so make sure your project properties target this version of .NET Framework otherwise this package may not be listed in the results when you search for it from inside your development project.__
 
-
-- [Hello Expense](https://github.com/concur/concur-platform-sdk-dotnet/tree/readmeDocs#hello-expense-report-sample)
-
 ## Installation
 
 #### Referencing our NuGet Package from Visual Studio
@@ -100,7 +97,7 @@ All classes in ConcurPlatform library have detailed intellisense documentation. 
 * Concur.Connect.__V1.ConnectService__ - This service class is only useful if you need to submit receipts [to an expense report](https://developer.concur.com/imaging/image-resource/image-resource-post#postimagetoreport), [to an expense entry](https://developer.concur.com/imaging/image-resource/image-resource-post#postimagetoentry), or [to an invoice](https://developer.concur.com/imaging/image-resource/image-resource-post#postimagetopaymentrequest) (A.K.A. payment request). This service class was only incorporated to the ConcurPlatform library because we wanted to isolate in this class any functionality related to the old version 1.0 of Concur web services which were not available yet in version 3.0.
 * Concur.Authentication.__AuthenticationService__ - This service class is only useful if you need to manage OAuth tokens. It abstracts calls to the [Native Flow Token service](https://developer.concur.com/oauth-20/native-flow), the [Refresh Token service](https://developer.concur.com/oauth-20/refreshing-access-tokens), and the [Revoke Token service](https://developer.concur.com/oauth-20/working-access-tokens/revoking-access-tokens). You shouldn't need to use this service class in scenarios where you already have an OAuth token and you aren't planning to revoke or refresh it.
 
-The [SDK samples](https://github.com/concur/concur-platform-sdk-dotnet/tree/master/sample) exemplifies the usage of the above classes. [Click here](https://github.com/concur/concur-platform-sdk-dotnet/blob/master/sample/_shared/ClientLibraryFacade.cs) to jump directly to a C# file shared by all samples and where all 3 classes above are instantiated and used. Otherwise, see the Hello Expense Report Sample mentioned previously.
+The [SDK samples](https://github.com/concur/concur-platform-sdk-dotnet/tree/master/sample) exemplifies the usage of the above classes. [Click here](https://github.com/concur/concur-platform-sdk-dotnet/blob/master/sample/_shared/ClientLibraryFacade.cs) to jump directly to a C# file shared by all samples and where all 3 classes above are instantiated and used. Otherwise, see the [Hello Expense Report Sample](#hello-expense-report-sample) mentioned previously.
 
 #### Method Name Pattern
 
