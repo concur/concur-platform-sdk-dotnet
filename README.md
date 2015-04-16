@@ -43,28 +43,40 @@ using Concur.Util;
 using Concur.Connect.V3;
 using Concur.Connect.V3.Serializable;
 . . .
-static async void HelloExpenseReportSample()
+static async Task HelloExpenseReportSample(string oauthAccessToken)
 {
-    var serviceV3 = new Concur.Connect.V3.ConnectService( __ProvideHereYourOAuthAccessToken__ );
-    var report = await serviceV3.CreateExpenseReportsAsync(
-        new ReportPost() { Name = "Hello Expense Report" }
-    );
-    Console.WriteLine("Successfully created a report with ID = " + report.ID);
+  var serviceV3 = new Concur.Connect.V3.ConnectService(oauthAccessToken);
+  var report = await serviceV3.CreateExpenseReportsAsync(
+    new ReportPost() { Name = "Hello Expense Report" }
+  );
+  Console.WriteLine("Successfully created a report with ID = " + report.ID);
 
-    /*** Paste here the code to submit a receipt to the report header ***/
+  /*** Paste here the code to submit a receipt to the report header ***/
 }
 ```
 
 If you want to enrich the above sample and make it submit a receipt image to the report header then copy and paste the code snippet displayed below to the bottom of the above sample. 
 
 ```C#
-    var serviceV1 = new Concur.Connect.V1.ConnectService( __ProvideHereYourOAuthAccessToken__ );
-    byte[] expenseImageData = new System.Net.WebClient().DownloadData("https://raw.githubusercontent.com/concur/concur-platform-sdk-dotnet/master/sample/_shared/TestReceipt.jpg");
-    var receiptImage = await serviceV1.CreateExpenseReportReceiptImagesAsync(expenseImageData, ReceiptFileType.Jpeg, report.ID);
-    if (receiptImage != null) Console.WriteLine("Successfully submitted a receipt to the report header");
+var serviceV1 = new Concur.Connect.V1.ConnectService(oauthAccessToken);
+byte[] expenseImageData = new System.Net.WebClient().DownloadData("https://raw.githubusercontent.com/concur/concur-platform-sdk-dotnet/master/sample/_shared/TestReceipt.jpg");
+var receiptImage = await serviceV1.CreateExpenseReportReceiptImagesAsync(expenseImageData, ReceiptFileType.Jpeg, report.ID);
+if (receiptImage != null) Console.WriteLine("Successfully submitted a receipt to the report header");
 ```
 
-If you want to see how to obtain OAuth tokens from a user's loginID and password, how to create expense entries for a report, how to submit receipt images to expense entries, how to obtain the configuration groups for a company, how to determine the allowed expense policies, how to determine the allowed payment types, or how to determine allowed expense types, please browse our Windows, Android, and iOS [samples](https://github.com/concur/concur-platform-sdk-dotnet/tree/master/sample).
+In case you are wondering how to obtain the OAuth access token from the user's loginID (e.g. smith@TheCompany.com) and password then the sample below exemplifies it. Notice that the "oauthAppClientID" parameter is the unique ID (known as client ID or consumer key) that identifies applications in the [OAuth protocol](https://tools.ietf.org/html/rfc6749). 
+
+```C#
+static async Task<string> GetOAuthTokenFromLoginPassword(string loginID, string password, string oauthAppClientID)
+{
+  var authService = new Concur.Authentication.AuthenticationService();
+  var oauthDetail = await authService.GetOAuthTokenAsync(loginID, password, oauthAppClientID);
+  var yourOAuthAccessToken = oauthDetail.AccessToken;
+  return yourOAuthAccessToken;
+}
+```
+
+Please browse our Windows, Android, and iOS [samples](https://github.com/concur/concur-platform-sdk-dotnet/tree/master/sample) if you want to see to see sample code of how to obtain OAuth tokens from a user's loginID and password, how to create expense entries for a report, how to submit receipt images to expense entries, how to obtain the configuration groups for a company, how to determine the allowed expense policies, how to determine the allowed payment types, how to determine allowed expense types, and more.
 
 # ConcurPlatform Library in Details
 
@@ -121,7 +133,7 @@ The *resource names* are based on usual names for Expense and Travel business. T
   * [ExpenseInvoiceReceiptImages](https://developer.concur.com/imaging/image-resource/image-resource-post#postimagetopaymentrequest)
   * [ExpenseReportReceiptImages](https://developer.concur.com/imaging/image-resource/image-resource-post#postimagetoreport)
 * Concur.Authentication.AuthenticationService Resource Names
-  * Authentication service doesn't actually have resources, but it has operations to [get OAuth tokens using native flow](https://developer.concur.com/oauth-20/native-flow), [revoke OAuth tokens](https://developer.concur.com/oauth-20/working-access-tokens/revoking-access-tokens), and [refresh OAuth tokens](https://developer.concur.com/oauth-20/refreshing-access-tokens).
+  * Authentication service doesn't actually have resources, but it has operations to [get OAuth tokens](https://developer.concur.com/oauth-20/native-flow) using native flow, [refresh OAuth tokens](https://developer.concur.com/oauth-20/refreshing-access-tokens), and [revoke OAuth tokens](https://developer.concur.com/oauth-20/working-access-tokens/revoking-access-tokens).
 
 To avoid future issues with methods that might have identical signature we include parameter names in some method names, for example:
 * GetExpenseReports**ById**Async(string **id**, ...)
@@ -132,13 +144,32 @@ And finally, all asynchronous methods end with the **Async** word. Whereas the s
 
 #### Pagination Pattern
 
-TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO
+To prevent time-out or latency when issuing web services calls, our ConcurPlatform library allows data pagination. One web service call is issued for each data page requested, and the call is only issued when the library consumer requests the next page. Pagination is supported on operations that return a collection of data from Concur (i.e. typically __Get__ operations). Operations that support pagination always have an integer parameter named __'limit'__ for informing the page size, and a string parameter named __'offset'__ for informing where the next page begins. The pagination sort order is based on an internal field managed by Concur and hidden from the public, but in general the pagination order is the same as the creation date for the collection item (e.g. expense report, expense entry, etc.) at Concur. 
 
+The sample below exemplifies how to paginate through expense reports.
 
-TODO put a link for each resource name listed previously
-
-
-
+```C#
+static async Task PaginateThruExpenseReports(string oauthAccessToken)
+{
+  var serviceV3 = new Concur.Connect.V3.ConnectService(oauthAccessToken);
+  string nextPageOffset = null;
+  bool isEndOfPagination = false;
+  do
+  {
+    Console.WriteLine("********** begin new page **********");
+    var page = await serviceV3.GetExpenseReportsAsync(limit: 3, offset: nextPageOffset);
+    foreach (var report in page.Items) Console.WriteLine(
+      "REPORT ID: '{0}'  ,  NAME: '{1}'",
+      report.ID,
+      report.Name
+    );
+    nextPageOffset = page.NextPageOffset();
+    isEndOfPagination = page.IsEndOfPagination();
+  }
+  while (!isEndOfPagination);
+  Console.WriteLine("********** end of pages **********");
+}
+```
 
 
 ## License
