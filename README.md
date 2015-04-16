@@ -67,7 +67,7 @@ If you want to enrich the above sample and make it submit a receipt image to the
     );
 ```
 
-In case you are wondering how to obtain the OAuth access token from the user's __loginID__ (e.g. "smith@TheCompany.com") and __password__ then the sample below exemplifies it. Notice that the __oauthAppClientID__ parameter is the unique ID (known as client ID or consumer key) that identifies applications in the [OAuth protocol](https://tools.ietf.org/html/rfc6749). 
+In case you are wondering how to obtain the OAuth access token from the user's __loginID__ (e.g. `smith@TheCompany.com`) and __password__ then the sample below exemplifies it. Notice that the __oauthAppClientID__ parameter is the unique ID (known as client ID or consumer key) that identifies applications in the [OAuth protocol](https://tools.ietf.org/html/rfc6749). 
 
 ```C#
 static async Task<string> GetOAuthTokenFromLoginPassword(
