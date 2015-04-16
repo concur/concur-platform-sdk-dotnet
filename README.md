@@ -13,6 +13,8 @@ This SDK contains the following:
 The ConcurPlatform library source code (included in this SDK) is already compiled and uploaded on [http://www.nuget.org/packages/ConcurPlatform](http://www.nuget.org/packages/ConcurPlatform) as a NuGet package named "*ConcurPlatform*". __NOTE: this package targets .NET Framework version 4.5 or later, so make sure your project properties target this version of .NET Framework otherwise this package may not be listed in the results when you search for it from inside your development project.__
 
 
+- [Hello Expense](#hello-expense)
+
 ## Installation
 
 #### Referencing our NuGet Package from Visual Studio
@@ -67,7 +69,7 @@ If you want to enrich the above sample and make it submit a receipt image to the
     );
 ```
 
-In case you are wondering how to obtain the OAuth access token from the user's __loginID__ (e.g. `smith@TheCompany.com`) and __password__ then the sample below exemplifies it. Notice that the __oauthAppClientID__ parameter is the unique ID (known as client ID or consumer key) that identifies applications in the [OAuth protocol](https://tools.ietf.org/html/rfc6749). 
+In case you are wondering how to obtain the OAuth access token from the user's __loginID__ (e.g. `smith@TheCompany.com`) and __password__ then the sample below exemplifies it. Notice that the __oauthAppClientID__ parameter is a unique ID (known as client ID or consumer key) that identifies applications in the [OAuth protocol](https://tools.ietf.org/html/rfc6749). 
 
 ```C#
 static async Task<string> GetOAuthTokenFromLoginPassword(
@@ -154,7 +156,7 @@ And finally, all asynchronous methods end with the **Async** word. Whereas the s
 
 #### Pagination Pattern
 
-To prevent time-out or latency when issuing web services calls, our ConcurPlatform library allows data pagination. One web service call is issued for each data page requested, and the call is only issued when the library consumer requests the next page. Pagination is supported on operations that return a collection of data from Concur (i.e. typically __Get__ operations). Operations that support pagination always have an integer parameter named __'limit'__ for informing the page size, and a string parameter named __'offset'__ for informing where the next page begins. The pagination sort order is based on an internal field managed by Concur and hidden from the public, but in general the pagination order is the same as the creation date for the collection item (e.g. expense report, expense entry, etc.) at Concur. 
+To prevent time-out or latency when issuing web service calls, our ConcurPlatform library allows data pagination. One web service call is issued for each data page requested, and the call is only issued when the library consumer requests the next page. Pagination is supported on operations that return a collection of data from Concur (i.e. GetExpenseReportsAsync, GetExpenseEntriesAsync, GetExpenseAttendeesAsync, etc.). Operations that support pagination always have an integer parameter named __'limit'__ for informing the page size, and a string parameter named __'offset'__ for informing where the next page begins. The pagination sort order is based on an internal field managed by Concur and hidden from the public, but in general the pagination order for an element is the same as the element's creation date at Concur. 
 
 The sample below exemplifies how to paginate through expense reports.
 
