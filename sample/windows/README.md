@@ -9,4 +9,4 @@ SDK Sample for Windows
 
 
 
-![SKD Windows Sample Screenshot](../windows_sample_figure1.jpg)
+![SKD Windows Sample Screenshot](../../figures/windows_sample_figure1.jpg)
