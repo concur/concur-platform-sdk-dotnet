@@ -5,6 +5,8 @@ SDK Sample for Windows
 
 
 
-[test1](https://github.com/concur/concur-platform-sdk-dotnet/blob/master/sample/windows/README.md) .... , ... [test2](../README.md)
+[test2](../README.md)
 
 
+
+![SKD Windows Sample Screenshot](../windows_sample_figure1.jpg)
