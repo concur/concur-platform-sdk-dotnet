@@ -5,13 +5,13 @@ We have samples in this SDK for different operating systems (Windows, Android, a
 
 You need user credentials for a sandbox company at Concur in order to play with any sample. If you don't have that then [read here](../README.md#User-Credentials-and-Sandbox-Company) how to obtain it.
 
+Our samples reference the **ConcurPlatform** library's NuGet package. If you are using Visual Studio to build the samples, depending on the VS version, we have noticed that the NuGet package reference has to be re-established. Please [Read here](../README.md) about our NuGet package, how to reference it from a project, and recommended ways to do it in Visual Studio to avoid known issues.
+
 Please notice that the UI in any sample is split in 2 areas (**top area** and **bottom area**). 
 * The UI's **top area** displays what a typical app installation UI would display. It expects the user to input his/her login ID and password so that the app could obtain and store the OAuth token for that user (a typical app shouldn't store the user's login ID and password, it should only store the OAuth token). ConcurPlatform library can perform web service calls on the behalf of a user just using his/her OAuth access token. Notice that the Client ID displayed in the UI is an unique ID used by the [OAuth protocol](https://tools.ietf.org/html/rfc6749) in order to uniquely identify an app. An app should use the same OAuth Client ID no matter how many times it gets installed and no matter in which device it gets installed. Therefore a real app should hardcode (or download during installation) the OAuth Client ID and it shouldn't display this ID to users. In our sample we require the user to input the Client ID just because it isn't a production app and therefore the Client ID will be different in each sandbox company. **ConcurPlatform** library doesn't need the OAuth client ID in order to perform web service calls, it only needs the user's OAuth access token.
 * The UI's **bottom area** displays the user input needed by a typical app in order to submit one expense report, with one expense entry and an associated receipt image, to the user's company at Concur.  
 
 Our samples have 2 kinds of programming code. There is OS-specific programming code for dealing with UI controls, file system, etc. And there is programming code for dealing with the ConcurPlatform library. For all samples, we isolated any programing code dealing with the ConcurPlatform library in one file, named [ClientLibraryFacade.cs](./_shared/ClientLibraryFacade.cs), which is the same file referenced by all samples. This way, you can simply read that small and fully documented source code file in order to understand how to program against the ConcurPlatform library.
-
-Our samples reference the **ConcurPlatform** library's NuGet package. [Read here](../README.md) about our NuGet package, how to reset the project's reference to it, and recommended ways to do it in Visual Studio to avoid some known issues.
 
 Please see below the screenshot for each sample.
 
