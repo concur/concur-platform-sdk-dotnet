@@ -16,4 +16,4 @@ Android Sample Screenshot
 
 iOS Sample Screenshot
 
-![iOS Sample Screenshot](../figures/ios_sample_figure1.jpg)
+![iOS Sample Screenshot](../figures/iOS_sample_figure1.jpg)
