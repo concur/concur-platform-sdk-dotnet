@@ -5,12 +5,15 @@ The samples in this SDK were implemented for different operating systems (Window
 
 
 ###Windows Sample Screenshot
+
 ![Windows Sample Screenshot](../figures/windows_sample_figure1.jpg)
 
 
 ###Android Sample Screenshot
+
 ![Android Sample Screenshot](../figures/android_sample_figure1.jpg)
 
 
 ###iOS Sample Screenshot
+
 ![iOS Sample Screenshot](../figures/iOS_sample_figure1.jpg)
